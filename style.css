@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'pixelfont';
+    src: url('pixelFont.woff2') format('woff2'),
+         url('pixelFont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-size: 48px;
+	font-family: 'pixelfont';
+	color: #257085;
+	background-color: #fab56a;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow:hidden;
+}
