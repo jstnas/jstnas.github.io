@@ -21,3 +21,16 @@ footer {
     width: 100%;
     overflow:hidden;
 }
+
+a {
+	color: #257085;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #19a89a;
+}
+
+#team {
+	display: inline;
+}
