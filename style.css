@@ -9,8 +9,13 @@
 body {
 	font-size: 48px;
 	font-family: 'pixelfont';
-	color: #257085;
-	background-color: #fab56a;
+    background-color: #170f21;
+	color: #e8ae51;
+    text-shadow:
+    -2px -2px 0 #02092e,
+    2px -2px 0 #02092e,
+    -2px 2px 0 #02092e,
+    2px 2px 0 #02092e;
 }
 
 footer {
@@ -23,12 +28,12 @@ footer {
 }
 
 a {
-	color: #257085;
+	color: #de5c45;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #19a89a;
+	color: #faf16e;
 }
 
 #in {
