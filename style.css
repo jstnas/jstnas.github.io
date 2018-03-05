@@ -7,6 +7,8 @@
 }
 
 body {
+    background-image: url("background.png");
+    background-repeat: repeat;
 	font-size: 48px;
 	font-family: 'pixelfont';
     background-color: #170f21;
@@ -38,4 +40,28 @@ a:hover {
 
 #in {
 	display: inline;
+}
+
+/*** Works on common browsers ***/
+::selection {
+    color: #f9ffcc;
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+    color: #f9ffcc;
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+    color: #f9ffcc;
+}
+
+::-ms-selection {
+    color: #f9ffcc;
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+    color: #f9ffcc;
 }
