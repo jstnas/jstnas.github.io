@@ -1,17 +1,28 @@
+/*
+    Sigma Games
+    Stylesheet by Justinas Grigas
+*/
 @font-face {
-    font-family: 'pixelfont';
-    src: url('pixelFont.woff2') format('woff2'),
-         url('pixelFont.woff') format('woff');
+    font-family: 'motorola';
+    src: url('fonts/motorola.woff2') format('woff2'),
+         url('fonts/motorola.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nokia';
+    src: url('fonts/nokia.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    background-image: url("background.png");
+    background-image: url("images/background.png");
     background-repeat: repeat;
-	font-size: 48px;
-	font-family: 'pixelfont';
     background-color: #170f21;
+	font-family: 'motorola';
+    font-size: 32px;
 	color: #e8ae51;
     text-shadow:
     -2px -2px 0 #02092e,
@@ -20,48 +31,33 @@ body {
     2px 2px 0 #02092e;
 }
 
+#small {
+    font-family: 'nokia';
+    font-size: 24px;
+}
+
 footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 100px;
+    height: 70px;
     width: 100%;
     overflow:hidden;
 }
 
+td {
+    padding-bottom: 40px;
+}
+
 a {
-	color: #de5c45;
-	text-decoration: none;
+    color: #de5c45;
+    text-decoration: none;
 }
 
 a:hover {
-	color: #faf16e;
+    color: #faf16e;
 }
 
-#in {
-	display: inline;
-}
-
-/*** Works on common browsers ***/
 ::selection {
-    color: #f9ffcc;
-}
-
-/*** Mozilla based browsers ***/
-::-moz-selection {
-    color: #f9ffcc;
-}
-
-/***For Other Browsers ***/
-::-o-selection {
-    color: #f9ffcc;
-}
-
-::-ms-selection {
-    color: #f9ffcc;
-}
-
-/*** For Webkit ***/
-::-webkit-selection {
     color: #f9ffcc;
 }
