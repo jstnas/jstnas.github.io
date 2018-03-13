@@ -20,10 +20,10 @@
 body {
     background-image: url("images/background.png");
     background-repeat: repeat;
-    background-color: #170f21;
+    background-color: #16111c;
 	font-family: 'motorola';
     font-size: 32px;
-	color: #e8ae51;
+	color: #e09a3f;
     text-shadow:
     -2px -2px 0 #02092e,
     2px -2px 0 #02092e,
@@ -50,14 +50,14 @@ td {
 }
 
 a {
-    color: #de5c45;
+    color: #d13b3b;
     text-decoration: none;
 }
 
 a:hover {
-    color: #faf16e;
+    color: #5fd459;
 }
 
 ::selection {
-    color: #f9ffcc;
+    color: #f7df65;
 }
