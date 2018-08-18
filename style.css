@@ -1,63 +1,102 @@
-/*
-    Sigma Games
-    Stylesheet by Justinas Grigas
-*/
-@font-face {
-    font-family: 'motorola';
-    src: url('fonts/motorola.woff2') format('woff2'),
-         url('fonts/motorola.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+@font-face
+{
+    font-family: "PiCelFont";
+    src: url("fonts/PiCelFont.ttf") format("opentype"),
+        url("fonts/PiCelFont.woff") format("woof");
 }
 
-@font-face {
-    font-family: 'nokia';
-    src: url('fonts/nokia.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+html
+{
+    box-sizing: border-box;
+    font-family: "PiCelFont";
+    font-size: 23px;
+    background-color: rgb(7, 49, 54);
+    color: rgb(22, 17, 28);
 }
 
-body {
-    background-image: url("images/background.png");
-    background-repeat: repeat;
-    background-color: #16111c;
-	font-family: 'motorola';
-    font-size: 32px;
-	color: #e09a3f;
-    text-shadow:
-    -2px -2px 0 #16111c,
-    2px -2px 0 #16111c,
-    -2px 2px 0 #16111c,
-    2px 2px 0 #16111c;
+body
+{
+    margin: 0;
 }
 
-#small {
-    font-family: 'nokia';
-    font-size: 16px;
+img
+{
+    padding: 12px;
+    max-width: 100%;
+    height: auto;
 }
 
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 70px;
-    width: 100%;
-    overflow:hidden;
+p
+{
+    font-size: 46px;
+    margin: 0;
 }
 
-td {
-    padding-bottom: 40px;
+p a
+{
+    text-decoration: none;
+    color: rgb(209, 59, 59);
 }
 
-a {
-    color: #d13b3b;
+::selection
+{
+    background-color: rgb(247, 223, 101);
+}
+
+.header
+{
+    overflow: hidden;
+    background-color: rgb(22, 17, 28);
+    color: rgb(255, 255, 227);
+    padding: 20px 10px;
+    border-bottom: 10px solid rgb(138, 28, 53);
+}
+
+.header a
+{
+    background-color: rgb(255, 255, 227);
+    float: left;
+    color: rgb(209, 59, 59);
+    text-align: center;
+    padding: 12px;
     text-decoration: none;
 }
 
-a:hover {
-    color: #5fd459;
+.header a:hover
+{
+    background-color: rgb(138, 28, 53);
+    color: rgb(255, 255, 227);
 }
 
-::selection {
-    color: #f7df65;
+.header a.active
+{
+    background-color: rgb(7, 49, 54);
+    color: rgb(255, 255, 227);
+}
+
+.header-right { float: right; }
+
+.main 
+{
+    text-align: center;
+    padding: 15px;
+    border-width: 0 10px 10px 10px;
+    border-color: rgb(138, 28, 53);
+    border-style: solid;
+    margin: auto;
+    max-width: 1000px;
+    background-color: rgb(255, 255, 227);
+}
+
+table
+{
+    width: 100%;
+}
+
+th
+{
+    padding: 10px;
+    background-color: rgb(247, 223, 101);
+    font-size: 23px;
+    font-weight: normal;
 }
