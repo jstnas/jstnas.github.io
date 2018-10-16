@@ -509,6 +509,9 @@
             // Keep your variables private if you can, and create getter and setter functions instead.
             private int _currentHealth = 2;
 
+            // Private variables won't show up in the editor, so you can use the Serialize Field attribute.
+            [SerializeField] private int _damage = 10;
+
             // Getter and Setter functions.
             public void GetCurrentHealth()
             {
@@ -525,6 +528,40 @@
 			</div>
 
 			<div class="sub">
+				<heading>~ Attributes ~</heading>
+
+				<div class="sub">
+					<p> Attributes are like the cherry on top, they modify variables in various ways. </p>
+					<div class="script">
+						<pre>
+            // Headers create a space and a bold heading in the editor.
+            [Header("Variables!")]
+
+            // SerializeField will force a field to show up in the editor, even if it's private.
+            [SerializeField] private bool _isRightHanded;
+
+            // Space will create a gap between the variables in the editor.
+            [Space]
+
+            // Range will turn a numerical field into a slider.
+            [Range(-10, 10)] public float sliderField = .1f;
+
+            // Tooltip will make a description appear when you hover over a field, even more cherries on top of the cake.
+            [Tooltip("The force that is applied to the character when he jumps.")] public float JumpForce = 300;
+
+            // Attributes can also be combined to save space.
+            [Space, SerializeField, Range(0, 200), Tooltip("The base accuracy of the weapon")]
+            private int _weaponAccuracy;
+
+            // RequireComponent will force the GameObject with this script to also have the required component.
+            [RequireComponent(typeOf("Camera"), typeOf("CameraController"))]
+            public class CameraRotation : MonoBehaviour
+            </pre>
+					</div>
+				</div>
+			</div>
+
+			<div class="sub">
 				<heading>~ Random numbers ~</heading>
 
 				<div class="sub">
@@ -533,6 +570,7 @@
 						<pre>
               // this will generate a random integer.
               var randomIntNumber = Random.Range(0, 100);
+
               // As long as at least one parameter is a float, the result will also be a float.
               var randomFloatNumber = Random.Range(-10f, 100);
             </pre>
@@ -772,7 +810,7 @@
 						You probably do not, because I do my best to update them regularly, but don't you worry, you can get the latest version from
 						<a href="https://github.com/jstn-as/jstn-as.github.io" target="_blank" id="blu">GitHub</a>.
 					</p>
-					<p>The version of this document is: <m id="blu">18/10/16:09</m></p>
+					<p>The version of this document is: <m id="blu">18/10/16:10</m></p>
 				</div>
 			</div>
 		</section>
