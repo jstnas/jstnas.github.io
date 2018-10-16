@@ -3,8 +3,12 @@
 	<!-- Additional Data for the page -->
 	<head>
 		<title>Justin's Holy HandBook</title>
+
+		<meta charset="utf-8">
+		<meta name="description" content="A digital equivalent to a holy script of your choice.">
+		<meta author="Justinas Grigas">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="A guide to stuff.">
+
 		<link rel="shortcut icon" type="image/png" href="../png/favicon-holy-hand-book.png"/>
 
 		<!-- Javascript programming for the page -->
@@ -64,11 +68,24 @@
 			// This function will adjust the max-width of the body to keep everything pixel perfect.
 			function KeepPixelPerfect() {
 				// Get the current width of the page.
-				var width = window.innerWidth;
-				// Check if the width is even or odd.
-				var isEven = (width % 2 == 0);
-				// Change the max width based on whether the current width is even or odd.
-				document.getElementById("Body").style.maxWidth = (isEven ? "801px" : "800px");
+				var width = document.getElementsByTagName("html")[0].offsetWidth;
+
+				// Get the link to the body element.
+				var body = document.getElementsByTagName("Body")[0];
+
+				// Get the width of body.
+				var bodyWidth = body.offsetWidth;
+
+				// Work out the amount of space left.
+				var freeSpace = width - bodyWidth;
+
+				// The freespace is halved and forced to be even.
+				freeSpace = (freeSpace % 2 == 0) ? freeSpace : freeSpace - 1;
+				// Work out the width of the margin, in pixels.
+				var marginWidth = String(freeSpace / 2) + "px";
+
+				// Set the width of the margin.
+				body.style.marginLeft = marginWidth;
 			}
 		</script>
 
@@ -94,7 +111,7 @@
 
 			/* Styling for the main page. */
 			body {
-				max-width: 801px;
+				max-width: 800px;
 				margin: auto;
 			}
 
@@ -210,7 +227,6 @@
 				border-style: solid;
 			}
 
-
 			/* Highligher colours. */
 			#r {
 				color: #fdfdf8;
@@ -292,7 +308,7 @@
 	</head>
 
 	<!-- Actual page itself. -->
-	<body id="Body" onload="RemoveSpacesFromCode()" onresize="KeepPixelPerfect()">
+	<body onload="RemoveSpacesFromCode(); KeepPixelPerfect()" onresize="KeepPixelPerfect()">
 		<header>
 			<span><m class="logo">Justin's Holy HandBook_</m></span>
 			<table class="links">
@@ -321,6 +337,12 @@
 						<p>Tip 1 - Change IDE to JetBrains Rider.</p>
 						<p>Tip 2 - Change the playmode tint.</p>
 						<p>Tip 3 - Change UI to dark mode.</p>
+					</div>
+
+					<p>~ Aseprite ~</p>
+
+					<div class="sub">
+						<p>Tip 1 - Basic tools.</p>
 					</div>
 				</div>
 			</div>
@@ -372,6 +394,12 @@
 		<!-- Programs -->
 		<section>
 			<heading id="Programs"><m id="o">- Programs -</m></heading>
+
+			<div class="sub">
+				<p>
+					This section will contain various tips to help you get better with a certain program.
+				</p>
+			</div>
 
 			<div class="sub">
 				<heading>~ Unity ~</heading>
@@ -448,24 +476,53 @@
 
 			<div class="sub">
 				<heading>~ Aseprite ~</heading>
+				<p><a href="https://www.youtube.com/watch?v=Md6W79jtLJM" target="_blank" id="o">Intro tutorial to Aseprite by Mort</a> - This gives you quite a good introduction into Aseprite, watch this before you read the rest.</p>
+				<p><a href="https://www.aseprite.org/quickref/" target="_blank" id="o">Aseprite Quick Reference</a> - Lists all the different tools Aseprite has to offer, can be quite hard to understand.<p>
 				<div class="sub">
 					<heading><m id="o">Tip 1</m> - Basic tools.</heading>
 
 					<div class="sub">
 						<p>Aseprite is a really powerful tool, if you know how to use it, if you don't, than this is for you.</p>
-						<p> Requirements - <m>None</m></p>
-						<p><m>B</m> - Pencil tool:</p>
+						<p><m id="o">B</m> - Pencil Tool:</p>
 
 						<div class="sub">
-							<p>The pencil tool is the most basic, and probably the most useful tool in your aresenal.</p>
-							<p>1.2 - <m id="b">Right click the Unity Shortcut > Open File Location > Unity.exe</m></p>
-							<p>1.3 - If you don't have a Unity shortcut on the desktop, enter <m>Unity.exe</m> into the Search Bar</p>
+							<p>"The pencil is one of the most simple and useful tools in your arsenal."</p>
+							<p>Settings at the top:</p>
+
+							<div class="sub">
+								<p><m>Brush Type</m> - Controls the shape of the tool, I'll teach you how to create custom brushes later.</p>
+								<p><m>Brush Size</m> - Sets the width of the brush, useful for creating outlines.</p>
+								<p><m>Ink</m> - This setting is quite complex, you can mess around yourself. I'll make a dedicated tip later on.</p>
+								<p><m>Pixel Perfect</m> - No need to have it on, makes your lines clean, turn it off if you're not drawing lines.</p>
+							</div>
+							<p>Key combos:</p>
+
+							<div class="sub">
+								<p><m>LMB</m> - Draw using your foreground colour.</p>
+								<p><m>RMB</m> - Lays down your background colour, if you set it to mask, It'll act as an eraser.</p>
+								<p><m>Shift + LMB</m> - Draw a starting point, and It'll start draw a line between the point and your mouse, acts as a faster way of drawing a line.</p>
+								<p><m>Shift + Control + LMB</m> - Same as before, but the lines are at clean rotations.</p>
+							</div>
 						</div>
-						
-						<p>2 - Go to <m>Edit > Preferences > Colours</m>.</p>
-						<p>3 - Change the Playmode under <m>General > Playmode tint</m>.</p>
-						<p>4 - Edit the tint in playmode to see it change live.</p>
-						<p>Now when you enter playmode, Unity's UI will be tinted.</p>
+						<p><m id="o">G</m> - Paint Bucket Tool:</p>
+
+						<div class="sub">
+							<p>"Makes your life easier one bucketful at a time."</p>
+							<p>Settings at the top:</p>
+
+							<div class="sub">
+								<p><m>Tolerance</m> - Sets the max difference between colours that will be filled, meaning the higher the tolerance, the more colours will be filled in.</p>
+								<p><m>Contigious</m> - Turning this on means that it'll only colour in pixels that are connected.</p>
+								<p><m>Extra paint bucket options</m> - Pretty self explanatory, don't really need them, but are nice to have.</p>
+								<p><m>Ink</m> - Same as the Pencil Tool.</p>
+							</div>
+							<p>Key combos:</p>
+
+							<div class="sub">
+								<p><m>LMB</m> - Draw using your foreground colour.</p>
+								<p><m>RMB</m> - Lays down your background colour, if you set it to mask, It'll act as an eraser.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -647,6 +704,7 @@
 						<a href="https://en.wikipedia.org/wiki/Interpolation" target="_blank" id="g">Interpolation</a>
 						- Finding a point a certain distance in between two known points.
 					</p>
+					<p><m id="g">LMB</m> - Abbreviation of Left Mouse Button. RMB for right, and MMB for the middle one.</p>
 				</div>
 			</div>
 
@@ -803,11 +861,7 @@
 				<heading>~ What is this? ~</heading>
 
 				<div class="sub">
-					<p>
-						<m class="bla">Justin's Holy HandBook_</m>
-						is a page filled with tips to help you with Game Design, It's currently only being made by yours truly, just because.<br>
-						Well actually, Gregor told me it'd be a good resource for you guys to have.
-					</p>
+					<p><m class="bla">Justin's Holy HandBook_</m> Is a website and a tool that contains a trove of links and content to help you get better at creating games. This originally started as a text document for Ben, but has since evolved into its own webpage. It's currently onlt being developed by yours truly, but I hope more of you join me in expanding the Holy Hand Book!</p>
 				</div>
 			</div>
 
@@ -816,10 +870,7 @@
 
 				<div class="sub">
 					<p>
-						Using the HandBook is not, or at least should not be difficult,
-						Every section has it's own colour. You can go to any section by
-						simply scrolling, or by using the header links at the top of the
-						page.
+						Using the HandBook is not, or at least should not be difficult, Every section has it's own colour. You can go to any section by simply scrolling, or by using the header links at the top of the page.
 					</p>
 				</div>
 			</div>
@@ -831,7 +882,7 @@
 					<p>
 						If you want to help, than first of all thank you for considering contributing.
 						You can send me an
-						<a href="mailto:jgrigas@elam.co.uk?subject=Justins-Holy-HandBook" target="_blank" id="blu">Email</a>
+						<a href="mailto:jgrigas@elam.co.uk?subject=Holy-HandBook" target="_blank" id="blu">Email</a>
 						with any thoughs or suggestions.
 						You could also send me a message on
 						<a href="https://twitter.com/jstn_as" target="_blank" id="blu">Twitter</a>.
@@ -841,24 +892,11 @@
 					</p>
 				</div>
 			</div>
-
-			<div class="sub">
-				<heading>~ Which of us has the latest version? ~</heading>
-
-				<div class="sub">
-					<p>
-						You probably do not, because I do my best to update them regularly, but don't you worry, you can get the latest version from
-						<a href="https://github.com/jstn-as/jstn-as.github.io" target="_blank" id="blu">GitHub</a>.
-					</p>
-					<p>The version of this document is: <m id="blu">18/10/16:16</m></p>
-				</div>
-			</div>
 		</section>
 
 		<!-- Extra -->
 		<section>
 			<heading id="Extra"><m id="p">- Extra -</m></heading>
-
 			<div class="sub">
 				<heading>~ Credits ~</heading>
 				<div class="sub">
@@ -869,8 +907,14 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Colours ~</heading>
+				<heading>~ Version ~</heading>
+				<div class="sub">
+					<p>The version of this document is: <m id="p">18/10/16:21</m></p>
+				</div>
+			</div>
 
+			<div class="sub">
+				<heading>~ Colours ~</heading>
 				<div class="sub">
 					<p>Use at your own risk</p>
 					<button id="r" class="btn red" onclick="SetPageColour(0)">Red</button>
