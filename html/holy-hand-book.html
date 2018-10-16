@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 	<!-- Additional Data for the page -->
 	<head>
 		<title>Justin's Holy HandBook</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="A guide to stuff.">
-		<link rel="shortcut icon" type="image/png" href="../png/favicon-holyHandBook.png"/>
+		<link rel="shortcut icon" type="image/png" href="../png/favicon-holy-hand-book.png"/>
 
 		<!-- Javascript programming for the page -->
 		<script>
@@ -51,6 +51,7 @@
 				}
 			}
 
+			// This function will remove all the spaces from the scripts to allow the tabs to work properly.
 			function RemoveSpacesFromCode() {
 				var preList = document.querySelectorAll("pre");
 				for (var i = 0; i < preList.length; i++) {
@@ -58,6 +59,18 @@
 					code = code.split('  ').join('');
 					preList[i].innerHTML = code;
 				}
+			}
+
+			// This function will adjust the max-width of the body to keep everything pixel perfect.
+			function KeepPixelPerfect() {
+				var width = window.innerWidth;
+				var isEven = (width % 2 == 0);
+				var targetWidth = "0px";
+
+				if (isEven) { targetWidth = "801px"; }
+				else { targetWidth = "800px"; }
+
+				document.getElementById("Body").style.maxWidth = targetWidth;
 			}
 		</script>
 
@@ -281,7 +294,7 @@
 	</head>
 
 	<!-- Actual page itself. -->
-	<body onload="RemoveSpacesFromCode()">
+	<body id="Body" onload="RemoveSpacesFromCode()" onresize="KeepPixelPerfect()">
 		<header>
 			<span><m class="logo">Justin's Holy HandBook_</m></span>
 			<table class="links">
@@ -506,7 +519,7 @@
 						<pre>
             // First of all, fields can't be of type var, and therefore have to be set.
             int maxHealth = 10;
-            // Keep your variables private if you can, and create getter and setter functions instead.
+            // Keep your fields private if you can, and create getter and setter functions instead.
             private int _currentHealth = 2;
 
             // Private variables won't show up in the editor, so you can use the Serialize Field attribute.
@@ -751,6 +764,10 @@
 						<a href="https://ephtracy.github.io/" target="_blank" id="g">MagicaVoxel</a> -
 						This is a free voxel art editor, my personal favourite!
 					</p>
+					<p>
+						<a href="http://www.minddesk.com/" target="_blank" id="g">Qubicle</a> -
+						This is the voxel art tool that Crossy Road was made in, really good, but it ain't cheap.
+					</p>
 				</div>
 			</div>
 		</section>
@@ -810,7 +827,7 @@
 						You probably do not, because I do my best to update them regularly, but don't you worry, you can get the latest version from
 						<a href="https://github.com/jstn-as/jstn-as.github.io" target="_blank" id="blu">GitHub</a>.
 					</p>
-					<p>The version of this document is: <m id="blu">18/10/16:10</m></p>
+					<p>The version of this document is: <m id="blu">18/10/16:15</m></p>
 				</div>
 			</div>
 		</section>
