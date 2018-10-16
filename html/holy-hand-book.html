@@ -63,14 +63,12 @@
 
 			// This function will adjust the max-width of the body to keep everything pixel perfect.
 			function KeepPixelPerfect() {
+				// Get the current width of the page.
 				var width = window.innerWidth;
+				// Check if the width is even or odd.
 				var isEven = (width % 2 == 0);
-				var targetWidth = "0px";
-
-				if (isEven) { targetWidth = "801px"; }
-				else { targetWidth = "800px"; }
-
-				document.getElementById("Body").style.maxWidth = targetWidth;
+				// Change the max width based on whether the current width is even or odd.
+				document.getElementById("Body").style.maxWidth = (isEven ? "801px" : "800px");
 			}
 		</script>
 
@@ -387,17 +385,17 @@
 						Requirements -
 						<a href="https://www.jetbrains.com/rider/" target="_blank" id="o">JetBrains Rider</a>
 					</p>
-					<p>1 - Open up any Unity project</p>
+					<p>1 - Open up Unity</p>
 					<p>2 - Go to <m>Edit > Preferences > External Tools</m></p>
 					<p>3 - Click on the External Script Editor and choose to <m>Browse...</m></p>
-					<p>4 - Find the location of Rider</p>
+					<p>4 - Find the location of Rider:</p>
 
 					<div class="sub">
 						<p>4.1 - The fastest way to find Rider is by finding the shortcut on the dekstop</p>
 						<p>4.2 - <m>Right Click the Rider Shortcut > Open File Location > rider.exe</m></p>
 						<p>4.2 - If you don't have a Rider shortcut on the desktop, enter <m>rider.exe</m> into the Search Bar</p>
 					</div>
-					<p>Unity should now open your C# files using JetBrains Rider</p>
+					<p>Unity should now open your C# files using JetBrains Rider.</p>
 					</div>
 				</div>
 
@@ -407,10 +405,11 @@
 					<div class="sub">
 						<p>This will help you know when you're in playmode, and trust me, it's a life / work saver.</p>
 						<p> Requirements - <m>None</m></p>
-						<p>1 - Open up any Unity project</p>
-						<p>2 - Go to <m>Edit > Preferences > Colours</m></p>
-						<p>3 - Change the Playmode tint to any shade</p>
-						<p>Now when you enter playmode, Unity's UI will be tinted</p>
+						<p>1 - Open Unity.</p>
+						<p>2 - Go to <m>Edit > Preferences > Colours</m>.</p>
+						<p>3 - Change the Playmode under <m>General > Playmode tint</m>.</p>
+						<p>4 - Edit the tint in playmode to see it change live.</p>
+						<p>Now when you enter playmode, Unity's UI will be tinted.</p>
 					</div>
 				</div>
 
@@ -827,7 +826,7 @@
 						You probably do not, because I do my best to update them regularly, but don't you worry, you can get the latest version from
 						<a href="https://github.com/jstn-as/jstn-as.github.io" target="_blank" id="blu">GitHub</a>.
 					</p>
-					<p>The version of this document is: <m id="blu">18/10/16:15</m></p>
+					<p>The version of this document is: <m id="blu">18/10/16:16</m></p>
 				</div>
 			</div>
 		</section>
