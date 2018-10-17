@@ -94,7 +94,6 @@
 			/* Set up the Comicoro font.*/
 			@font-face {
 				font-family: "Comicoro";
-				font-size: 32px;
 				src: url(../ttf/Comicoro.ttf);
 			}
 
@@ -106,12 +105,13 @@
 
 			/* Styling for the whole page. */
 			html {
+				font-size: 32px;
 				background-color: #1b1c33;
 			}
 
 			/* Styling for the main page. */
 			body {
-				max-width: 800px;
+				max-width: 1200px;
 				margin: auto;
 			}
 
@@ -121,11 +121,15 @@
 				margin: 10px 0 10px 0;
 			}
 
-			heading {
-				font-size: 32px;
+			bigText {
+				font-size: 48px;
 			}
 
-			/* styling for both highlighted text and links. */
+			smallText {
+				font-size: 16px;
+			}
+
+			/* styling for both highlighted text. */
 			m, a {
 				background-color: #1b1c33;
 				color: #fdfdf8;
@@ -135,6 +139,10 @@
 			/* Removes the underline for links. */
 			a {
 				text-decoration: none;
+			}
+
+			p {
+				margin: 10px 0 10px 0;
 			}
 
 			/* Styling for the actual code. */
@@ -252,6 +260,10 @@
 				color: #fdfdf8;
 				background-color: #7b53ad;
 			}
+			#w {
+				color: #1b1c33;
+				background-color: #fdfdf8;
+			}
 
 			/* Hide header links. */
 			#Index, #Programs, #Snippets, #StuffToKnow, #About, #Extra {
@@ -325,13 +337,13 @@
 
 		<!-- Index -->
 		<section>
-			<heading id="Index"><m id="r">- Index -</m></heading>
+			<bigText id="Index"><m id="r">- Index -</m></bigText>
 
 			<div class="sub">
-				<heading>- Programs -</heading>
+				<bigText><a href="#Programs" id="w">- Programs -</a></bigText>
 				
 				<div class="sub">
-					<p>~ Unity ~</p>
+					<p><a href="#Unity" id="w">~ Unity ~</a></p>
 
 					<div class="sub">
 						<p>Tip 1 - Change IDE to JetBrains Rider.</p>
@@ -348,7 +360,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>- Snippets -</heading>
+				<bigText>- Snippets -</bigText>
 				
 				<div class="sub">
 					<p>~ Variables ~</p>
@@ -359,7 +371,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>- Stuff To Know -</heading>
+				<bigText>- Stuff To Know -</bigText>
 				
 				<div class="sub">
 					<p>~ WiFi passwords that you've forgotten ~</p>
@@ -371,7 +383,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>- About -</heading>
+				<bigText>- About -</bigText>
 				
 				<div class="sub">
 					<p>~ What is this? ~</p>
@@ -382,7 +394,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>- Extra -</heading>
+				<bigText>- Extra -</bigText>
 				
 				<div class="sub">
 					<p>~ Credits ~</p>
@@ -393,7 +405,7 @@
 
 		<!-- Programs -->
 		<section>
-			<heading id="Programs"><m id="o">- Programs -</m></heading>
+			<bigText id="Programs"><m id="o">- Programs -</m></bigText>
 
 			<div class="sub">
 				<p>
@@ -402,11 +414,11 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Unity ~</heading>
+				<bigText id="Unity">~ Unity ~</bigText>
 				<p><a href="https://www.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA" target="_blank" id="o">Brackeys</a> - These guys have some of the highest quality tutorial on all aspects of Unity, they have a lot of content so start binging it.</p>
 				<p><a href="https://www.youtube.com/channel/UC9Z1XWw1kmnvOOFsj6Bzy2g" target="_blank" id="o">Blackthornprod</a> - More tutorials for you to look at. These ones in particular are centered aroung indie games development.</p>
 				<div class="sub">
-					<heading><m id="o">Tip 1</m> - Change IDE to JetBrains Rider.</heading>
+					<bigText><m id="o">Tip 1</m> - Change IDE to JetBrains Rider.</bigText>
 
 					<div class="sub">
 					<p> This will set JetBrains Rider as your IDE for Unity instead of Visual Studio.</p>
@@ -429,7 +441,7 @@
 				</div>
 
 				<div class="sub">
-					<heading><m id="o">Tip 2</m> - Change the playmode tint.</heading>
+					<bigText><m id="o">Tip 2</m> - Change the playmode tint.</bigText>
 
 					<div class="sub">
 						<p>This will help you know when you're in playmode, and trust me, it's a life / work saver.</p>
@@ -443,7 +455,7 @@
 				</div>
 
 				<div class="sub">
-					<heading><m id="o">Tip 3</m> - Change UI to Dark Theme.</heading>
+					<bigText><m id="o">Tip 3</m> - Change UI to Dark Theme.</bigText>
 
 					<div class="sub">
 						<p>This will give Unity's UI a dark tint, which is a paid feature.</p>
@@ -476,14 +488,45 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Aseprite ~</heading>
+				<bigText>~ Aseprite ~</bigText>
 				<p><a href="https://www.youtube.com/watch?v=Md6W79jtLJM" target="_blank" id="o">Intro tutorial to Aseprite by Mort</a> - This gives you quite a good introduction into Aseprite, watch this before you read the rest.</p>
 				<p><a href="https://www.aseprite.org/quickref/" target="_blank" id="o">Aseprite Quick Reference</a> - Lists all the different tools Aseprite has to offer, can be quite hard to understand.<p>
 				<div class="sub">
-					<heading><m id="o">Tip 1</m> - Basic tools.</heading>
+					<bigText><m id="o">Tip 1</m> - Tool overlook.</bigText>
 
 					<div class="sub">
-						<p>Aseprite is a really powerful tool, if you know how to use it, if you don't, than this is for you.</p>
+						<p>This will run through the tools on the right hand.</p>
+						<p><m id="o">M</m> - Rectangular Marquee Tool:</p>
+
+						<div class="sub">
+							<p>"Your basic select tool."</p>
+							<p>Settings at the top:</p>
+
+							<div class="sub">
+								<p>Selection type:</p>
+
+								<div class="sub">
+									<p>Selection tools are useful when you want to select a complex shape.</p>
+									<p><m>Replace selection</m> - The default option, everytime you draw a rectangle, it'll replace the old one.</p>
+									<p><m>Add to selection</m> - Instead of replaceing the existing rectangle, it'll add to it.</p>
+									<p><m>Subtract from selection</m> - Instead of replaceing the existing rectangle, it'll remove from it.</p>
+								</div>
+								<p><m>Transparent Color</m> - If you're using a background, set it to the transparent color which will remove it form selection.</p>
+								<p><m>Rotation Pivot</m> - This setting sets the point at which the selection will be rotated around.</p>
+								<p><m>Rotation Algorithm</m> - The way the image will be rotated, fast rotation is simple, but might look bad, while RotSprite seems to do the job better.</p>
+							</div>
+							<p>Key combos:</p>
+
+							<div class="sub">
+								<p><m>LMB</m> - Draw a new rectangle.</p>
+								<p><m>RMB</m> - Remove from an existing rectangle.</p>
+								<p><m>LMB + Shift</m> - Add to the existing rectangle.</p>
+								<p><m>LMB + Alt</m> - Rotate the rectangle.</p>
+								<p><m>Shift + LMB</m> - Draw a square.</p>
+								<p><m>Control + LMB</m> - Draw a rectangle form the staring position.</p>
+								<p><m>Shift + Control + LMB</m> - Draw a square form the staring position.</p>
+							</div>
+						</div>
 						<p><m id="o">B</m> - Pencil Tool:</p>
 
 						<div class="sub">
@@ -524,6 +567,11 @@
 								<p><m>RMB</m> - Lays down your background colour, if you set it to mask, It'll act as an eraser.</p>
 							</div>
 						</div>
+					</div>
+					<bigText><m id="o">Tip 2</m> - More tools.</bigText>
+
+					<div class="sub">
+						<p>This is a collection of the less known tools and features which are really useful.</p>
 						<p><m id="o">Shift + R</m> - Replace colour:</p>
 
 						<div class="sub">
@@ -534,6 +582,14 @@
 							<p><m>Tolerance</m> - Works the same as the tolerance for the Paint Bucket Tool.</p>
 							<p><m>Preview</m> - If it's ticked, it'll show you what the outcome will look like.</p>
 						</div>
+						<p><m id="o">F9</m> - Convolution Matrix:</p>
+
+						<div class="sub">
+							<p>"Full of really awesome secrets!"</p>
+							
+							<p><m>Outlines</m> - The two bottom options, in my opinion, are the best and the most usefull ever. Creating outlines by hand takes forever, Aseprite will do it in a flash!</p>
+							<p>There are many more options, and I'll leave discorvering them to you!</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -541,7 +597,7 @@
 
 		<!-- Snippets -->
 		<section>
-			<heading id="Snippets"><m id="y">- Snippets -</m></heading>
+			<bigText id="Snippets"><m id="y">- Snippets -</m></bigText>
 
 			<div class="sub">
 				<p>
@@ -550,7 +606,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Variables ~</heading>
+				<bigText>~ Variables ~</bigText>
 
 				<div class="sub">
 					<p> Variables are like containers, they can store different types of data. </p>
@@ -575,7 +631,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Classes ~</heading>
+				<bigText>~ Classes ~</bigText>
 
 				<div class="sub">
 					<p> Every script you make in Unity will start as a class. </p>
@@ -602,7 +658,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Fields ~</heading>
+				<bigText>~ Fields ~</bigText>
 
 				<div class="sub">
 					<p> More about the variables that are defined at the start of the class. </p>
@@ -632,13 +688,13 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Attributes ~</heading>
+				<bigText>~ Attributes ~</bigText>
 
 				<div class="sub">
 					<p> Attributes are like the cherry on top, they modify variables in various ways. </p>
 					<div class="script">
 						<pre>
-            // Headers create a space and a bold heading in the editor.
+            // Headers create a space and a bold bigText in the editor.
             [Header("Variables!")]
 
             // SerializeField will force a field to show up in the editor, even if it's private.
@@ -666,7 +722,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Random numbers ~</heading>
+				<bigText>~ Random numbers ~</bigText>
 
 				<div class="sub">
 					<p>Random numbers are very usefull to, well, add randomisation to your game.</p>
@@ -685,10 +741,10 @@
 
 		<!-- Stuff To Know -->
 		<section>
-			<heading id="StuffToKnow"><m id="g">- Stuff to know -</m></heading>
+			<bigText id="StuffToKnow"><m id="g">- Stuff to know -</m></bigText>
 
 			<div class="sub">
-				<heading>~ WiFi passwords that you've forgotten ~</heading>
+				<bigText>~ WiFi passwords that you've forgotten ~</bigText>
 
 				<div class="sub">
 					<p>Name : <m id="g">ELAM_Guest</m></p>
@@ -699,7 +755,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Glossary of words you should know ~</heading>
+				<bigText>~ Glossary of words you should know ~</bigText>
 
 				<div class="sub">
 					<p>You can press the highlighted text to learn more.</p>
@@ -720,48 +776,47 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ People you should check out ~</heading>
+				<bigText>~ People you should check out ~</bigText>
 
 				<div class="sub">
-					<p>
-						Justinas "JSTN_AS" Grigas -
+					<p>Justinas "JSTN_AS" Grigas -
 						<a href="https://jstn-as.github.io/" target="_blank" id="g">Website</a> -
 						<a href="https://twitter.com/jstn_as" target="_blank" id="g">Twitter</a> -
 						<a href="https://jstn-as.itch.io/" target="_blank" id="g">Games</a> -
-						Me, Justin, the guy that loves to program.
-					</p>
-					<p>
-						Daniel "Managore" Linssen -
+						Me, Justin, the guy that loves to program.</p>
+
+					<p>Daniel "Managore" Linssen -
 						<a href="https://daniellinssen.net/" target="_blank" id="g">Website</a> -
 						<a href="https://twitter.com/Managore" target="_blank" id="g">Twitter</a> -
 						<a href="https://managore.itch.io/" target="_blank" id="g">Games</a> -
-						He's the guy I aspire to be, his games are quality, good quality.
-					</p>
-					<p>
-						Anton Kudin -
+						He's the guy I aspire to be, his games are quality, good quality.</p>
+
+					<p>Anton Kudin -
 						<a href="http://www.antonkudin.me/" target="_blank" id="g">Website</a> -
 						<a href="https://twitter.com/antonkudin" target="_blank" id="g">Twitter</a> -
 						<a href="http://www.antonkudin.me/megasphere/" target="_blank" id="g">Games</a> -
-						He's working on a really cool pixel game that looks absolutely amazing, big inspiration.
-					</p>
-					<p>
-						Richard "Disasterpeace" Vreeland -
+						He's working on a really cool pixel game that looks absolutely amazing, big inspiration.</p>
+
+					<p>Richard "Disasterpeace" Vreeland -
 						<a href="http://disasterpeace.com/" target="_blank" id="g">Website</a> -
 						<a href="https://twitter.com/disasterpeace" target="_blank" id="g">Twitter</a> -
 						<a href="http://disasterpeace.com/music" target="_blank" id="g">Music</a> -
-						He's quite a popular chiptune music artist, having made music for FEZ and Hyper Light Drifter and many more, love his work.
-					</p>
-					<p>
-						Mark Brown -
+						He's quite a popular chiptune music artist, having made music for FEZ and Hyper Light Drifter and many more, love his work.</p>
+
+					<p>Mark Brown -
 						<a href="https://twitter.com/britishgaming" target="_blank" id="g">Twitter</a> -
 						<a href="https://www.youtube.com/channel/UCqJ-Xo29CKyLTjn6z2XwYAw" target="_blank" id="g">Youtube</a> -
-						He's my favourite video games journalist, look at his stuff if you want to learn more about the industry, and how to make games well.
-					</p>
+						He's my favourite video games journalist, look at his stuff if you want to learn more about the industry, and how to make games well.</p>
+
+					<p>Brendan "Sully" Sullivan -
+						<a href="https://twitter.com/artofsully" target="_blank" id="g">Twitter</a> -
+						<a href="https://www.artstation.com/brendansullivan" target="_blank" id="g">ArtStation</a> -
+						I've been following this guy for some time, I love his artstyle and I feel like that's how I want my 3D games to look at!</p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<heading>~ Websites that are quite cool ~</heading>
+				<bigText>~ Websites that are quite cool ~</bigText>
 
 				<div class="sub">
 					<p>
@@ -811,7 +866,7 @@
 				</div>
 			</div>
 			<div class="sub">
-				<heading>~ Programs you should have ~</heading>
+				<bigText>~ Programs you should have ~</bigText>
 
 				<div class="sub">
 					<p><a href="https://unity3d.com/" target="_blank" id="g">Unity</a> - <m>3D / 2D Games Engine</m> -
@@ -826,13 +881,24 @@
 					<p><a href="https://love2d.org/" target="_blank" id="g">LÖVE</a> - <m>2D Games Engine</m> -
 						Love is a lightweight, free to use, 2D Games Engine that's quite good for smaller, simpler games, I used this to learn Lua.</p>
 
+					<p><a href="https://www.pygame.org/news" target="_blank" id="g">Pygame</a> - <m>2D Games Engine</m> -
+						Python equivalent of LOVE. I've make snake, really fun!</p>
+
 					<p><a href="https://www.construct.net/en" target="_blank" id="g">Construct 3</a> - <m>2D Games Engine</m> -
 						Construct 3 is a Games Engine that runs in your browser, looks pretty cool.</p>
 
+					<p><a href="https://aws.amazon.com/lumberyard/" target="_blank" id="g">Amazon Lumberyard</a> - <m>3D Games Engine</m> -
+						I haven't really heard much about this Games Engine, since it seems to be in beta, but considering that it's made by Amazon, and is used to make Star Citizen, I feel like this is going to be a big one.</p>
+
 					<p><a href="https://www.aseprite.org/" target="_blank" id="g">Aseprite</a> - <m>Pixel Art Editor</m> -
 						Aseprite is probably the best pixel art tool, Photoshop is for noobs with money. You can either buy it, or compile it for free, or ask me in person.</p>
+
 					<p><a href="https://graphicsgale.com/us/" target="_blank" id="g">Graphics Gale</a> - <m>Pixel Art Editor</m> -
 						A free alternative to Aseprite, and trust me, this is an awesome free alternative, people say it's better for animation, but it's quite a retro tool.</p>
+
+					<p><a href="https://blackflux.com/node/10" target="_blank" id="g">PixelShop</a> - <m>Pixel Art Editor</m> -
+						Quite similar to Graphics Gale in it's UI, but it has many features that make it stand out.</p>
+
 					<p><a href="https://pyxeledit.com/" target="_blank" id="g">Pyxel Edit</a> - <m>Pixel Art Editor</m> -
 						Yet another pixel editor, works in tiles which makes it really useful when creating tilesets.</p>
 
@@ -860,24 +926,24 @@
 					<p><a href="http://crocotile3d.com/" target="_blank" id="g">Crocotile 3D</a> - <m>Modelling Software</m> -
 						Use this to make 3D models that use 2D tiles, it produces awesome looking models.</p>
 
-					<p>
-						<a href="https://ephtracy.github.io/" target="_blank" id="g">MagicaVoxel</a> - <m>Voxel Art Editor</m> -
-						This is a free voxel art editor, my personal favourite!
-					</p>
-					<p>
-						<a href="http://www.minddesk.com/" target="_blank" id="g">Qubicle</a> - <m>Voxel Art Editor</m> -
-						This is the voxel art tool that Crossy Road was made in, really good, but it ain't cheap.
-					</p>
+					<p><a href="https://ephtracy.github.io/" target="_blank" id="g">MagicaVoxel</a> - <m>Voxel Art Editor</m> -
+						This is a free voxel art editor, my personal favourite!</p>
+
+					<p><a href="https://blackflux.com/node/11" target="_blank" id="g">VoxelShop</a> - <m>Voxel Art Editor</m> -
+						This is an open source voxel art modeller and runs on pretty much everything, Has some features that MagicaVoxel doesn't.</p>
+
+					<p><a href="http://www.minddesk.com/" target="_blank" id="g">Qubicle</a> - <m>Voxel Art Editor</m> -
+						This is the voxel art tool that Crossy Road was made in, really good, but it ain't cheap.</p>
 				</div>
 			</div>
 		</section>
 
 		<!-- About -->
 		<section>
-			<heading id="About"><m id="blu">- About -</m></heading>
+			<bigText id="About"><m id="blu">- About -</m></bigText>
 
 			<div class="sub">
-				<heading>~ What is this? ~</heading>
+				<bigText>~ What is this? ~</bigText>
 
 				<div class="sub">
 					<p><m class="bla">Justin's Holy HandBook_</m> Is a website and a tool that contains a trove of links and content to help you get better at creating games. This originally started as a text document for Ben, but has since evolved into its own webpage. It's currently onlt being developed by yours truly, but I hope more of you join me in expanding the Holy Hand Book!</p>
@@ -885,7 +951,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ How do I use this? ~</heading>
+				<bigText>~ How do I use this? ~</bigText>
 
 				<div class="sub">
 					<p>
@@ -895,7 +961,7 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ How do I help? ~</heading>
+				<bigText>~ How do I help? ~</bigText>
 
 				<div class="sub">
 					<p>
@@ -915,9 +981,9 @@
 
 		<!-- Extra -->
 		<section>
-			<heading id="Extra"><m id="p">- Extra -</m></heading>
+			<bigText id="Extra"><m id="p">- Extra -</m></bigText>
 			<div class="sub">
-				<heading>~ Credits ~</heading>
+				<bigText>~ Credits ~</bigText>
 				<div class="sub">
 					<p>Contributors: Justinas Grigas</p>
 					<p>Palette: <a href="https://lospec.com/palette-list/endesga-8" target="_blank" id="p">Endesga 8</a></p>
@@ -926,14 +992,14 @@
 			</div>
 
 			<div class="sub">
-				<heading>~ Version ~</heading>
+				<bigText>~ Version ~</bigText>
 				<div class="sub">
 					<p>The version of this document is: <m id="p">18/10/16:22</m></p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<heading>~ Colours ~</heading>
+				<bigText>~ Colours ~</bigText>
 				<div class="sub">
 					<p>Use at your own risk!</p>
 					<button id="r" class="btn red" onclick="SetPageColour(0)">Red</button>
