@@ -14,11 +14,11 @@
 		<!-- Javascript programming for the page -->
 		<script>
 			var backgroundColourArray = [
-				'#d32734', '#da7d22', '#e6da29', '#28c641', '#2d93dd', '#7b53ad', '#1b1c33'
+				'#d44e52', '#ec8a4b', '#ffcc68', '#80ac40', '#55a894', '#523c4e', '#2a2a3a'
 			];
 
 			var textColourArray = [
-				'#fdfdf8', '#fdfdf8', '#1b1c33', '#1b1c33', '#fdfdf8', '#fdfdf8', '#fdfdf8'
+				'#fff8c0', '#fff8c0', '#2a2a3a', '#2a2a3a', '#fff8c0', '#fff8c0', '#fff8c0'
 			];
 
 			function SetPageColour(index) {
@@ -100,13 +100,13 @@
 			/* This keeps the font consistent throughout the whole page. */
 			* {
 				font-family: "Comicoro", monospace;
-				color: #1b1c33;
+				color: #2a2a3a;
 			}
 
 			/* Styling for the whole page. */
 			html {
 				font-size: 32px;
-				background-color: #1b1c33;
+				background-color: #2a2a3a;
 			}
 
 			/* Styling for the main page. */
@@ -116,7 +116,7 @@
 			}
 
 			section {
-				background-color: #fdfdf8;
+				background-color: #fff8c0;
 				padding: 10px;
 				margin: 10px 0 10px 0;
 			}
@@ -131,8 +131,8 @@
 
 			/* styling for both highlighted text. */
 			m, a {
-				background-color: #1b1c33;
-				color: #fdfdf8;
+				background-color: #2a2a3a;
+				color: #fff8c0;
 				padding: 1px 5px 1px 5px;
 			}
 
@@ -181,9 +181,9 @@
 			th {
 				font-weight: normal;
 				padding: 0;
-				border-width: 1px;
+				border-width: 2px;
 				border-style: solid;
-				border-color: #1b1c33;
+				border-color: #2a2a3a;
 			}
 
 			th > a {
@@ -194,8 +194,8 @@
 
 			/* Makes the selected text purple. */
 			::selection {
-				background-color: #7b53ad;
-				color: #fdfdf8;
+				background-color: #523c4e;
+				color: #fff8c0;
 			}
 
 			/* sub is used to create indents. */
@@ -207,18 +207,18 @@
 			/* Styling for the script divs. */
 			div.script {
 				padding: 5px;
-				border-width: 1px;
+				border-width: 2px;
 				border-style: solid;
-				border-color: #1b1c33;
-				background-color: #e6da29;
+				border-color: #2a2a3a;
+				background-color: #ffcc68;
 			}
 
 			/* Stylising for the buttons. */
 			.btn {
 				font-size: 32px;
-				border-width: 1px;
+				border-width: 2px;
 				border-style: solid;
-				border-color: #1b1c33;
+				border-color: #2a2a3a;
 				cursor: pointer;
 			}
 
@@ -230,39 +230,39 @@
 
 			/* Stylising for the logo of the page. */
 			.logo {
-				border-width: 1px;
-				border-color: #1b1c33;
+				border-width: 2px;
+				border-color: #2a2a3a;
 				border-style: solid;
 			}
 
 			/* Highligher colours. */
 			#r {
-				color: #fdfdf8;
-				background-color: #d32734;
+				color: #fff8c0;
+				background-color: #d44e52;
 			}
 			#o {
-				color: #fdfdf8;
-				background-color: #da7d22;
+				color: #fff8c0;
+				background-color: #ec8a4b;
 			}
 			#y {
-				color: #1b1c33;
-				background-color: #e6da29;
+				color: #2a2a3a;
+				background-color: #ffcc68;
 			}
 			#g {
-				color: #1b1c33;
-				background-color: #28c641;
+				color: #2a2a3a;
+				background-color: #80ac40;
 			}
 			#blu {
-				color: #fdfdf8;
-				background-color: #2d93dd;
+				color: #fff8c0;
+				background-color: #55a894;
 			}
 			#p {
-				color: #fdfdf8;
-				background-color: #7b53ad;
+				color: #fff8c0;
+				background-color: #523c4e;
 			}
 			#w {
-				color: #1b1c33;
-				background-color: #fdfdf8;
+				color: #2a2a3a;
+				background-color: #fff8c0;
 			}
 
 			/* Hide header links. */
@@ -706,7 +706,7 @@
             // Range will turn a numerical field into a slider.
             [Range(-10, 10)] public float sliderField = .1f;
 
-            // Tooltip will make a description appear when you hover over a field, even more cherries on top of the cake.
+            // Tooltip will make a description appear when you hover over a field.
             [Tooltip("The force that is applied to the character when he jumps.")] public float JumpForce = 300;
 
             // Attributes can also be combined to save space.
@@ -863,6 +863,10 @@
 						<a href="http://www.senshistock.com/sketch" target="_blank" id="g">Senshi Stock</a> -
 						This will generate random poses for you to study anatomy and practice drawing.
 					</p>
+					<p>
+						<a href="https://www.dafont.com/" target="_blank" id="g">Dafont</a> -
+						Use this website to find a font for your project, it has a good range of pixel fonts, and it's actually the place where I found this exact font.
+					</p>
 				</div>
 			</div>
 			<div class="sub">
@@ -891,7 +895,7 @@
 						I haven't really heard much about this Games Engine, since it seems to be in beta, but considering that it's made by Amazon, and is used to make Star Citizen, I feel like this is going to be a big one.</p>
 
 					<p><a href="https://www.aseprite.org/" target="_blank" id="g">Aseprite</a> - <m>Pixel Art Editor</m> -
-						Aseprite is probably the best pixel art tool, Photoshop is for noobs with money. You can either buy it, or compile it for free, or ask me in person.</p>
+						Aseprite is probably the best pixel art tool, Photoshop is for noobs with money. You can either buy it, or compile it for free from <a href="https://github.com/aseprite/aseprite">Github</a>, or ask me in person.</p>
 
 					<p><a href="https://graphicsgale.com/us/" target="_blank" id="g">Graphics Gale</a> - <m>Pixel Art Editor</m> -
 						A free alternative to Aseprite, and trust me, this is an awesome free alternative, people say it's better for animation, but it's quite a retro tool.</p>
@@ -989,7 +993,7 @@
 				<bigText>~ Credits ~</bigText>
 				<div class="sub">
 					<p>Contributors: Justinas Grigas</p>
-					<p>Palette: <a href="https://lospec.com/palette-list/endesga-8" target="_blank" id="p">Endesga 8</a></p>
+					<p>Palette: <a href="https://lospec.com/palette-list/equpix15" target="_blank" id="p">Equpix15</a></p>
 					<p>Font: <a href="https://fontenddev.com/fonts/comicoro/" target="_blank" id="p">Comicoro</a></p>
 				</div>
 			</div>
@@ -997,7 +1001,7 @@
 			<div class="sub">
 				<bigText>~ Version ~</bigText>
 				<div class="sub">
-					<p>The version of this document is: <m id="p">18/10/16:13</m></p>
+					<p>The version of this document is: <m id="p">2018/10/18:16</m></p>
 				</div>
 			</div>
 
