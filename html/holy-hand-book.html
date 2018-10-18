@@ -141,8 +141,9 @@
 				text-decoration: none;
 			}
 
-			p {
-				margin: 10px 0 10px 0;
+			hr {
+				display: block;
+				border-style: solid;
 			}
 
 			/* Styling for the actual code. */
@@ -154,7 +155,6 @@
 
 			/* makes the header and footer sticky. */
 			header, footer {
-				margin: 0 1px 0 -1px;
 				position: -webkit-sticky;
 				position: sticky;
 				text-align: left;
@@ -206,7 +206,7 @@
 
 			/* Styling for the script divs. */
 			div.script {
-				padding: 5px;
+				padding: 8px;
 				border-width: 2px;
 				border-style: solid;
 				border-color: #2a2a3a;
@@ -237,37 +237,32 @@
 
 			/* Highligher colours. */
 			#r {
-				color: #fff8c0;
 				background-color: #d44e52;
+				color: #fff8c0;
 			}
 			#o {
-				color: #fff8c0;
 				background-color: #ec8a4b;
+				color: #fff8c0;
 			}
 			#y {
-				color: #2a2a3a;
 				background-color: #ffcc68;
+				color: #2a2a3a;
 			}
 			#g {
-				color: #2a2a3a;
 				background-color: #80ac40;
+				color: #2a2a3a;
 			}
 			#blu {
-				color: #fff8c0;
 				background-color: #55a894;
+				color: #fff8c0;
 			}
 			#p {
-				color: #fff8c0;
 				background-color: #523c4e;
+				color: #fff8c0;
 			}
 			#w {
-				color: #2a2a3a;
 				background-color: #fff8c0;
-			}
-
-			/* Hide header links. */
-			#Index, #Programs, #Snippets, #StuffToKnow, #About, #Extra {
-				color: #fdfdf8;
+				color: #2a2a3a;
 			}
 
 			@media only screen and (max-width: 600px) {
@@ -488,6 +483,7 @@
 			</div>
 
 			<div class="sub">
+				<hr>
 				<bigText>~ Aseprite ~</bigText>
 				<p><a href="https://www.youtube.com/watch?v=Md6W79jtLJM" target="_blank" id="o">Intro tutorial to Aseprite by Mort</a> - This gives you quite a good introduction into Aseprite, watch this before you read the rest.</p>
 				<p><a href="https://www.aseprite.org/quickref/" target="_blank" id="o">Aseprite Quick Reference</a> - Lists all the different tools Aseprite has to offer, can be quite hard to understand.<p>
@@ -1015,9 +1011,9 @@
 					<button id="g" class="btn green" onclick="SetPageColour(3)">Green</button>
 					<button id="blu" class="btn blue" onclick="SetPageColour(4)">Blue</button>
 					<button id="p" class="btn purple" onclick="SetPageColour(5)">Purple</button>
-					<button style="background-color: #1b1c33; color: #fdfdf8;" class="btn black" onclick="SetPageColour(6)">Black</button>
-					<button style="background-color: #1b1c33; color: #fdfdf8;" class="btn default" onClick="SetPageColourRandomly()">Random</button>
-					<button style="background-color: #1b1c33; color: #fdfdf8;" class="btn default" onClick="window.location.reload()">Default</button>
+					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn black" onclick="SetPageColour(6)">Black</button>
+					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn default" onClick="SetPageColourRandomly()">Random</button>
+					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn default" onClick="window.location.reload()">Default</button>
 				</div>
 			</div>
 		</section>
