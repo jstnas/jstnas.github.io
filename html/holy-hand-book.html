@@ -87,6 +87,24 @@
 				// Set the width of the margin.
 				body.style.marginLeft = marginWidth;
 			}
+
+			// This functions allows the user to change the size of the text.
+			function SetTextSize(text, heading)
+			{
+				document.getElementsByTagName("html")[0].style.fontSize = String(text) + "px";
+
+				var headers = document.getElementsByTagName("bigText");
+
+				for (var i = headers.length - 1; i >= 0; i--) {
+					headers[i].style.fontSize = String(heading) + "px";
+				}
+
+				var buttons = document.getElementsByTagName("button");
+
+				for (var i = buttons.length - 1; i >= 0; i--) {
+					buttons[i].style.fontSize = String(heading) + "px";
+				}
+			}
 		</script>
 
 		<!-- CSS styling for the page -->
@@ -123,10 +141,6 @@
 
 			bigText {
 				font-size: 48px;
-			}
-
-			smallText {
-				font-size: 16px;
 			}
 
 			/* styling for both highlighted text. */
@@ -235,6 +249,12 @@
 				border-style: solid;
 			}
 
+			.indent {
+				border-width: 0 0 0 2px;
+				border-color: #2a2a3a;
+				border-style: dashed;
+			}
+
 			/* Highligher colours. */
 			#r {
 				background-color: #d44e52;
@@ -265,9 +285,13 @@
 				color: #2a2a3a;
 			}
 
-			@media only screen and (max-width: 600px) {
+			@media only screen and (max-width: 900px) {
 
 				/* Make the code wrap. */
+				.btn, bigText, html {
+					font-size: 16px;
+				}
+
 				pre {
 					tab-size: 2;
 				}
@@ -308,7 +332,7 @@
 				footer {
 					margin-right: -1px;
 					padding-bottom: 0;
-					bottom: 28px;
+					bottom: 3ch;
 				}
 			}
 		</style>
@@ -335,6 +359,7 @@
 			<bigText id="Index"><m id="r">- Index -</m></bigText>
 
 			<div class="sub">
+				<hr>
 				<bigText><a href="#Programs" id="w">- Programs -</a></bigText>
 				
 				<div class="sub">
@@ -355,6 +380,7 @@
 			</div>
 
 			<div class="sub">
+				<hr>
 				<bigText>- Snippets -</bigText>
 				
 				<div class="sub">
@@ -366,6 +392,7 @@
 			</div>
 
 			<div class="sub">
+				<hr>
 				<bigText>- Stuff To Know -</bigText>
 				
 				<div class="sub">
@@ -378,6 +405,7 @@
 			</div>
 
 			<div class="sub">
+				<hr>
 				<bigText>- About -</bigText>
 				
 				<div class="sub">
@@ -389,6 +417,7 @@
 			</div>
 
 			<div class="sub">
+				<hr>
 				<bigText>- Extra -</bigText>
 				
 				<div class="sub">
@@ -415,7 +444,7 @@
 				<div class="sub">
 					<bigText><m id="o">Tip 1</m> - Change IDE to JetBrains Rider.</bigText>
 
-					<div class="sub">
+					<div class="sub indent">
 					<p> This will set JetBrains Rider as your IDE for Unity instead of Visual Studio.</p>
 					<p>
 						Requirements -
@@ -438,7 +467,7 @@
 				<div class="sub">
 					<bigText><m id="o">Tip 2</m> - Change the playmode tint.</bigText>
 
-					<div class="sub">
+					<div class="sub indent">
 						<p>This will help you know when you're in playmode, and trust me, it's a life / work saver.</p>
 						<p> Requirements - <m>None</m></p>
 						<p>1 - Open Unity.</p>
@@ -452,7 +481,7 @@
 				<div class="sub">
 					<bigText><m id="o">Tip 3</m> - Change UI to Dark Theme.</bigText>
 
-					<div class="sub">
+					<div class="sub indent">
 						<p>This will give Unity's UI a dark tint, which is a paid feature.</p>
 						<p>
 							Requirements -
@@ -494,7 +523,7 @@
 						<p>This will run through the tools on the right hand.</p>
 						<p><m id="o">M</m> - Rectangular Marquee Tool:</p>
 
-						<div class="sub">
+						<div class="sub indent">
 							<p>"Your basic select tool."</p>
 							<p>Settings at the top:</p>
 
@@ -525,7 +554,7 @@
 						</div>
 						<p><m id="o">B</m> - Pencil Tool:</p>
 
-						<div class="sub">
+						<div class="sub indent">
 							<p>"The pencil is one of the most simple and useful tools in your arsenal."</p>
 							<p>Settings at the top:</p>
 
@@ -546,7 +575,7 @@
 						</div>
 						<p><m id="o">G</m> - Paint Bucket Tool:</p>
 
-						<div class="sub">
+						<div class="sub indent">
 							<p>"Makes your life easier one bucketful at a time."</p>
 							<p>Settings at the top:</p>
 
@@ -610,19 +639,47 @@
 						<pre>
               // int is a full number.
               int playerHealth = 123;
+              
               // float is a number with a decimal or floating point.
               float weaponRange = 123.456f;
+              
               // double is a float with a higher level of accuracy.
               double horizontalRotation = 123.456;
+              
               // string is a list of letters, numbers, and other characters.
               string playerName = "Justin";
+              
               // char is a single character that strings are built out of.
               char playerInitial = 'J';
+              
               // var is a special type that will change depending on what's put on the right.
               var aNumber = 123;
               var aString = "Hello World!"
             </pre>
 					</div>
+					<p><a id="y" href="https://www.tutorialspoint.com/csharp/csharp_variables.htm" target="_blank">More about Variables.</a></p>
+				</div>
+			</div>
+
+			<div class="sub">
+				<bigText>~ Arrays ~</bigText>
+
+				<div class="sub">
+					<p> Arrays are a type of variable that can hold a set amount of values. </p>
+					<div class="script">
+						<pre>
+              // an array is defined using type[] which means you can turn pretty much anything into an array.
+              // There are multiple ways to initialize arrays, one is to declare its size.
+              int[] Names = new int[10];
+              
+              // And then you can edit each one specifically.
+              Names[0] = "Justinas";
+              
+              // You can also initialise them using a list.
+              int[] myIntegers = new { 0, 20, 30, 123};
+            </pre>
+					</div>
+					<p><a id="y" href="https://www.tutorialspoint.com/csharp/csharp_arrays.htm" target="_blank">More about Arrays.</a></p>
 				</div>
 			</div>
 
@@ -650,6 +707,7 @@
               }
             </pre>
 					</div>
+					<p><a id="y" href="https://www.tutorialspoint.com/csharp/csharp_arrays.htm" target="_blank">More about Classes.</a></p>
 				</div>
 			</div>
 
@@ -805,7 +863,9 @@
 						He's my favourite video games journalist, look at his stuff if you want to learn more about the industry, and how to make games well.</p>
 
 					<p>Brendan "Sully" Sullivan -
+						<a href="https://artofsully.com/" target="_blank" id="g">Website</a> -
 						<a href="https://twitter.com/artofsully" target="_blank" id="g">Twitter</a> -
+						<a href="https://sketchfab.com/artofsully" target="_blank" id="g">Sketchfab</a> -
 						<a href="https://www.artstation.com/brendansullivan" target="_blank" id="g">ArtStation</a> -
 						I've been following this guy for some time, I love his artstyle and I feel like that's how I want my 3D games to look at!</p>
 				</div>
@@ -863,6 +923,10 @@
 						<a href="https://www.dafont.com/" target="_blank" id="g">Dafont</a> -
 						Use this website to find a font for your project, it has a good range of pixel fonts, and it's actually the place where I found this exact font.
 					</p>
+					<p>
+						<a href="https://forums.tigsource.com/" target="_blank" id="g">TIGForums</a> -
+						This is a forum around gaming, and it has a loot of cool stuff like <a href="https://forums.tigsource.com/index.php?topic=14166.0" target="_blank">free pixel art</a>.
+					</p>
 				</div>
 			</div>
 			<div class="sub">
@@ -892,6 +956,9 @@
 
 					<p><a href="https://www.aseprite.org/" target="_blank" id="g">Aseprite</a> - <m>Pixel Art Editor</m> -
 						Aseprite is probably the best pixel art tool, Photoshop is for noobs with money. You can either buy it, or compile it for free from <a href="https://github.com/aseprite/aseprite">Github</a>, or ask me in person.</p>
+
+						<p><a href="http://pulkomandy.tk/projects/GrafX2" target="_blank" id="g">GrafX2</a> - <m>Pixel Art Editor</m> -
+						This is a super retro pixel art editor that used to be very popular back in the day, but it's mostly become obselete, though still is a great editor.</p>
 
 					<p><a href="https://graphicsgale.com/us/" target="_blank" id="g">Graphics Gale</a> - <m>Pixel Art Editor</m> -
 						A free alternative to Aseprite, and trust me, this is an awesome free alternative, people say it's better for animation, but it's quite a retro tool.</p>
@@ -997,7 +1064,7 @@
 			<div class="sub">
 				<bigText>~ Version ~</bigText>
 				<div class="sub">
-					<p>The version of this document is: <m id="p">2018/10/18:16</m></p>
+					<p>The version of this document is: <m id="p">2018/11/08:21</m></p>
 				</div>
 			</div>
 
@@ -1014,6 +1081,15 @@
 					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn black" onclick="SetPageColour(6)">Black</button>
 					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn default" onClick="SetPageColourRandomly()">Random</button>
 					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn default" onClick="window.location.reload()">Default</button>
+				</div>
+			</div>
+
+			<div class="sub">
+				<bigText>~ Text Size ~</bigText>
+				<div class="sub">
+					<p>Adjust the size of the text.</p>
+					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn black" onclick="SetTextSize(12, 16)">Small</button>
+					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn black" onclick="SetTextSize(16, 32)">Normal</button>
 				</div>
 			</div>
 		</section>
