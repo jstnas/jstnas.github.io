@@ -6,13 +6,14 @@
 
 html
 {
-	background-color: #2a2a3a;
+	background-color: #101024;
 }
 
 body
 {
+	background-image: url("../");
 	color: #fff8c0;
-	font-family: Comicoro;
+	font-family: 'Comicoro';
 	font-size: 32px;
 	text-align: center;
 	max-width: 800px;
@@ -21,7 +22,7 @@ body
 
 footer
 {
-	color: #523c4e;
+	color: #2a2a3a;
 	text-align: left;
 	margin-left: 10px;
 	position: sticky;
@@ -30,8 +31,8 @@ footer
 
 section
 {
+	background-color: #2a2a3a;
 	margin: 10px;
-	background-color: #523c4e;
 }
 
 h1
@@ -52,7 +53,7 @@ a
 	text-decoration: none;
 }
 
-a:link { color: #55a894; }
-a:visited { color: #55a894; }
-a:hover { color: #8bd0ba; }
+a:link { color: #d44e52; }
+a:visited { color: #d44e52; }
+a:hover { color: #ec8a4b; }
 a:active { color: #55a894; }
