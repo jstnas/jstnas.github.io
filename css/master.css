@@ -38,9 +38,9 @@ h1
 }
 
 hr {
-	width: 80%;
+	width: 20%;
 	border-style: solid;
-	border-color: #2a2a3a;
+	border-color: #d44e52;
 }
 
 p
@@ -61,4 +61,9 @@ a:active { color: #55a894; }
 m {
 	background-color: #2a2a3a;
 	padding: 0 10px 0 10px;
+}
+
+::-moz-selection, ::selection  { /* Code for Firefox */
+	color: #fff8c0;
+	background-color: #d44e52;
 }
