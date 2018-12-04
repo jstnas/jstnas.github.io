@@ -22,7 +22,7 @@
 			];
 
 			function SetPageColour(index) {
-				var markers = document.querySelectorAll("m");
+				var markers = document.querySelectorAll("mark");
 				var links = document.querySelectorAll("a");
 				var snippets = document.querySelectorAll("div.script");
 				ReplaceColour(markers, index);
@@ -31,7 +31,7 @@
 			}
 
 			function SetPageColourRandomly() {
-				var markers = document.querySelectorAll("m");
+				var markers = document.querySelectorAll("mark");
 				var links = document.querySelectorAll("a");
 				var snippets = document.querySelectorAll("div.script");
 				ReplaceColourRandomly(markers);
@@ -105,7 +105,7 @@
 
 			/* Styling for the whole page. */
 			html {
-				font-size: 32px;
+				font-size: 2rem;
 				background-color: #2a2a3a;
 			}
 
@@ -121,14 +121,14 @@
 				margin: 10px 0 10px 0;
 			}
 
-			bigText {
-				font-size: 48px;
+			h1 {
+				margin: 1rem 0 1rem 0;
+				font-size: 2rem;
+				font-weight: normal;
 			}
 
 			/* styling for both highlighted text. */
-			m, a {
-				background-color: #2a2a3a;
-				color: #fff8c0;
+			mark, a {
 				padding: 1px 5px 1px 5px;
 			}
 
@@ -138,6 +138,7 @@
 			}
 
 			hr {
+				width: 60%;
 				display: block;
 				border-style: solid;
 			}
@@ -177,9 +178,6 @@
 			th {
 				font-weight: normal;
 				padding: 0;
-				border-width: 2px;
-				border-style: solid;
-				border-color: #2a2a3a;
 			}
 
 			th > a {
@@ -203,18 +201,11 @@
 			/* Styling for the script divs. */
 			div.script {
 				padding: 8px;
-				border-width: 2px;
-				border-style: solid;
-				border-color: #2a2a3a;
-				background-color: #ffcc68;
 			}
 
 			/* Stylising for the buttons. */
-			.btn {
-				font-size: 32px;
-				border-width: 2px;
-				border-style: solid;
-				border-color: #2a2a3a;
+			.Button {
+				font-size: 1rem;
 				cursor: pointer;
 			}
 
@@ -224,54 +215,62 @@
 				float: right;
 			}
 
-			/* Stylising for the logo of the page. */
-			.logo {
-				border-width: 2px;
-				border-color: #2a2a3a;
-				border-style: solid;
+			.indent {
+				border-left: 2px dashed #2a2a3a;
 			}
 
-			.indent {
-				border-width: 0 0 0 2px;
-				border-color: #2a2a3a;
-				border-style: dashed;
+			/* Custom logo */
+			.Logo {
+				margin-left: -2px;
+			}
+
+			/* Outlines */
+			.Logo, .Button, th, div.script  {
+				border: 2px solid #2a2a3a;
 			}
 
 			/* Highligher colours. */
-			#r {
+			.Red {
 				background-color: #d44e52;
 				color: #fff8c0;
 			}
-			#o {
+			.Orange {
 				background-color: #ec8a4b;
 				color: #fff8c0;
 			}
-			#y {
+			.Yellow {
 				background-color: #ffcc68;
 				color: #2a2a3a;
 			}
-			#g {
+		 	.Green{
 				background-color: #80ac40;
 				color: #2a2a3a;
 			}
-			#blu {
+			.Blue {
 				background-color: #55a894;
 				color: #fff8c0;
 			}
-			#p {
+			.Purple {
 				background-color: #523c4e;
 				color: #fff8c0;
 			}
-			#w {
+			.White {
 				background-color: #fff8c0;
 				color: #2a2a3a;
+			}
+			.Black {
+				background-color: #2a2a3a;
+				color: #fff8c0;
 			}
 
 			@media only screen and (max-width: 900px) {
 
 				/* Make the code wrap. */
-				.btn, bigText, html {
-					font-size: 16px;
+				h1, html {
+					font-size: 2rem;
+				}
+				.Button {
+					font-size: 1rem;
 				}
 
 				pre {
@@ -294,13 +293,13 @@
 					margin: 0;
 				}
 
-				.logo {
+				.Logo {
 					display: block;
 					float: none;
 				}
 
 				/* Makes header buttons easier to press. */
-				.logo, th > a {
+				.Logo, th > a {
 					padding: 5px 0 5px 0;
 					text-align: center;
 				}
@@ -314,7 +313,7 @@
 				footer {
 					margin-right: -1px;
 					padding-bottom: 0;
-					bottom: 32px;
+					bottom: 49px;
 				}
 			}
 		</style>
@@ -323,29 +322,29 @@
 	<!-- Actual page itself. -->
 	<body onload="RemoveSpacesFromCode(); KeepPixelPerfect()" onresize="KeepPixelPerfect()">
 		<header>
-			<span><m class="logo">Justin's Holy HandBook_</m></span>
+			<span><mark class="Logo Black">Justin's Holy HandBook_</mark></span>
 			<table class="links">
 				<tr>
-					<th><a href="#Index" id="r">Index</a></th>
-					<th><a href="#Programs" id="o">Programs</a></th>
-					<th><a href="#Snippets" id="y">Snippets</a></th>
-					<th><a href="#StuffToKnow" id="g">Stuff To Know</a></th>
-					<th><a href="#About" id="blu">About</a></th>
-					<th><a href="#Extra" id="p">Extra</a></th>
+					<th class="Red"><a href="#Index" class="Red">Index</a></th>
+					<th class="Orange"><a href="#Programs" class="Orange">Programs</a></th>
+					<th class="Yellow"><a href="#Snippets" class="Yellow">Snippets</a></th>
+					<th class="Green"><a href="#StuffToKnow" class="Green">Stuff To Know</a></th>
+					<th class="Blue"><a href="#About" class="Blue">About</a></th>
+					<th class="Purple"><a href="#Extra" class="Purple">Extra</a></th>
 				</tr>
 			</table>
 		</header>
 
 		<!-- Index -->
 		<section>
-			<bigText id="Index"><m id="r">- Index -</m></bigText>
+			<h1 id="Index"><mark class="Red">- Index -</mark></h1>
 
 			<div class="sub">
 				<hr>
-				<bigText><a href="#Programs" id="w">- Programs -</a></bigText>
-				
+				<h1><a class="Red" href="#Programs">- Programs -</a></h1>
+
 				<div class="sub">
-					<p><a href="#Unity" id="w">~ Unity ~</a></p>
+					<p><a class="Red" href="#Unity">~ Unity ~</a></p>
 
 					<div class="sub">
 						<p>Tip 1 - Change IDE to JetBrains Rider.</p>
@@ -363,8 +362,8 @@
 
 			<div class="sub">
 				<hr>
-				<bigText>- Snippets -</bigText>
-				
+				<h1>- Snippets -</h1>
+
 				<div class="sub">
 					<p>~ Variables ~</p>
 					<p>~ Classes ~</p>
@@ -375,8 +374,8 @@
 
 			<div class="sub">
 				<hr>
-				<bigText>- Stuff To Know -</bigText>
-				
+				<h1>- Stuff To Know -</h1>
+
 				<div class="sub">
 					<p>~ WiFi passwords that you've forgotten ~</p>
 					<p>~ Glossary of words you should know ~</p>
@@ -388,8 +387,8 @@
 
 			<div class="sub">
 				<hr>
-				<bigText>- About -</bigText>
-				
+				<h1>- About -</h1>
+
 				<div class="sub">
 					<p>~ What is this? ~</p>
 					<p>~ How do I use this? ~</p>
@@ -400,8 +399,8 @@
 
 			<div class="sub">
 				<hr>
-				<bigText>- Extra -</bigText>
-				
+				<h1>- Extra -</h1>
+
 				<div class="sub">
 					<p>~ Credits ~</p>
 					<p>~ Colours ~</p>
@@ -411,7 +410,7 @@
 
 		<!-- Programs -->
 		<section>
-			<bigText id="Programs"><m id="o">- Programs -</m></bigText>
+			<h1 id="Programs"><mark class="Orange">- Programs -</mark></h1>
 
 			<div class="sub">
 				<p>
@@ -420,73 +419,75 @@
 			</div>
 
 			<div class="sub">
-				<bigText id="Unity">~ Unity ~</bigText>
-				<p><a href="https://www.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA" target="_blank" id="o">Brackeys</a> - These guys have some of the highest quality tutorial on all aspects of Unity, they have a lot of content so start binging it.</p>
-				<p><a href="https://www.youtube.com/channel/UC9Z1XWw1kmnvOOFsj6Bzy2g" target="_blank" id="o">Blackthornprod</a> - More tutorials for you to look at. These ones in particular are centered aroung indie games development.</p>
+				<h1 id="Unity">~ Unity ~</h1>
+				<p>
+					<a class="Orange" href="https://www.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA" target="_blank">Brackeys</a> -
+					This channel is you one stop shop for Unity. There's a tutorial that covers pretty much every aspect of the engine.
+				</p>
+				<p>
+					<a class="Orange" href="https://www.youtube.com/channel/UC9Z1XWw1kmnvOOFsj6Bzy2g" target="_blank">Blackthornprod</a> -
+					More tutorials for you to look at. These ones in particular are centered aroung indie games development.
+				</p>
+
 				<div class="sub">
-					<bigText><m id="o">Tip 1</m> - Change IDE to JetBrains Rider.</bigText>
+					<h1><mark class="Orange">Tip 1</mark> - Change IDE to JetBrains Rider.</h1>
 
 					<div class="sub indent">
 					<p> This will set JetBrains Rider as your IDE for Unity instead of Visual Studio.</p>
 					<p>
 						Requirements -
-						<a href="https://www.jetbrains.com/rider/" target="_blank" id="o">JetBrains Rider</a>
+						<a class="Orange" href="https://www.jetbrains.com/rider/" target="_blank">JetBrains Rider</a>
 					</p>
 					<p>1 - Open up Unity</p>
-					<p>2 - Go to <m>Edit > Preferences > External Tools</m></p>
-					<p>3 - Click on the External Script Editor and choose to <m>Browse...</m></p>
-					<p>4 - Find the location of Rider:</p>
-
-					<div class="sub">
-						<p>4.1 - The fastest way to find Rider is by finding the shortcut on the dekstop</p>
-						<p>4.2 - <m>Right Click the Rider Shortcut > Open File Location > rider.exe</m></p>
-						<p>4.2 - If you don't have a Rider shortcut on the desktop, enter <m>rider.exe</m> into the Search Bar</p>
-					</div>
+					<p>2 - Go to <mark class="Black">Edit > Preferences > External Tools</mark></p>
+					<p>3 - Click on the External Script Editor and choose to <mark  class="Black">Browse...</mark></p>
+					<p>4 - To find the location of Rider, enter <mark class="Black">Rider</mark> into the Search Bar</p>
+					<p>5 - Keep on <mark class="Black">Right Click > Open file location</mark> until you get to <mark class="Black">rider64.exe</mark></p>
 					<p>Unity should now open your C# files using JetBrains Rider.</p>
 					</div>
 				</div>
 
 				<div class="sub">
-					<bigText><m id="o">Tip 2</m> - Change the playmode tint.</bigText>
+					<h1><mark class="Orange">Tip 2</mark> - Change the playmode tint.</h1>
 
 					<div class="sub indent">
 						<p>This will help you know when you're in playmode, and trust me, it's a life / work saver.</p>
-						<p> Requirements - <m>None</m></p>
+						<p> Requirements - <mark class="Black">None</mark></p>
 						<p>1 - Open Unity.</p>
-						<p>2 - Go to <m>Edit > Preferences > Colours</m>.</p>
-						<p>3 - Change the Playmode under <m>General > Playmode tint</m>.</p>
+						<p>2 - Go to <mark class="Black">Edit > Preferences > Colours</mark>.</p>
+						<p>3 - Change the Playmode under <mark class="Black">General > Playmode tint</mark>.</p>
 						<p>4 - Edit the tint in playmode to see it change live.</p>
 						<p>Now when you enter playmode, Unity's UI will be tinted.</p>
 					</div>
 				</div>
 
 				<div class="sub">
-					<bigText><m id="o">Tip 3</m> - Change UI to Dark Theme.</bigText>
+					<h1><mark class="Orange">Tip 3</mark> - Change UI to Dark Theme.</h1>
 
 					<div class="sub indent">
 						<p>This will give Unity's UI a dark tint, which is a paid feature.</p>
 						<p>
 							Requirements -
-							<a href="https://mh-nexus.de/en/hxd/" target="_blank" id="o">HxD</a>
+							<a class="Orange" href="https://mh-nexus.de/en/hxd/" target="_blank">HxD</a>
 						</p>
 						<p>1 - You'll need to locate Unity.exe</p>
 
 						<div class="sub">
 							<p>1.1 - The fastest way to do this is by finding the Unity shortcut on the desktop</p>
-							<p>1.2 - <m id="b">Right click the Unity Shortcut > Open File Location > Unity.exe</m></p>
-							<p>1.3 - If you don't have a Unity shortcut on the desktop, enter <m>Unity.exe</m> into the Search Bar</p>
+							<p>1.2 - <mark class="Black">Right click the Unity Shortcut > Open File Location > Unity.exe</mark></p>
+							<p>1.3 - If you don't have a Unity shortcut on the desktop, enter <mark class="Black">Unity.exe</mark> into the Search Bar</p>
 						</div>
 
 						<p>2 - Make a backup of Unity.exe just in case you mess up</p>
 						<p>3 - Copy it to the desktop and open it using HxD</p>
-						<p>4 - Open up the search box by either going to <m id="b">Search > Find</m> or pressing <m id="b">Ctrl + F</m></p>
+						<p>4 - Open up the search box by either going to <mark class="Black">Search > Find</mark> or pressing <mark class="Black">Ctrl + F</mark></p>
 						<p>5 - Change the search type to Hex Values</p>
 						<p>
 							5 - Paste
-							<m id="b">84 C0 75 08 33 C0 48 83 C4 20 5B C3 8B 03 48 83 C4 20 5B C3</m>
+							<mark class="Black">84 C0 75 08 33 C0 48 83 C4 20 5B C3 8B 03 48 83 C4 20 5B C3</mark>
 							into the Search For box
 						</p>
-						<p>6 - Replace the third value <m>Should be 75 by default</m> to 74 and save the file</p>
+						<p>6 - Replace the third value <mark class="Black">Should be 75 by default</mark> to 74 and save the file</p>
 						<p>7 - Copy the edited Unity.exe and replace the one in the Unity folder</p>
 						<p>Now when you load up Unity, a dark theme will be displayed.</p>
 					</div>
@@ -495,116 +496,17 @@
 
 			<div class="sub">
 				<hr>
-				<bigText>~ Aseprite ~</bigText>
-				<p><a href="https://www.youtube.com/watch?v=Md6W79jtLJM" target="_blank" id="o">Intro tutorial to Aseprite by Mort</a> - This gives you quite a good introduction into Aseprite, watch this before you read the rest.</p>
-				<p><a href="https://www.aseprite.org/quickref/" target="_blank" id="o">Aseprite Quick Reference</a> - Lists all the different tools Aseprite has to offer, can be quite hard to understand.<p>
+				<h1>~ Aseprite ~</h1>
+				<p><a href="https://www.youtube.com/watch?v=Md6W79jtLJM" target="_blank" class="Orange">Intro tutorial to Aseprite by Mort</a> - This gives you quite a good introduction into Aseprite, watch this before you read the rest.</p>
+				<p><a href="https://www.aseprite.org/quickref/" target="_blank" class="Orange">Aseprite Quick Reference</a> - Lists all the different tools Aseprite has to offer, can be quite hard to understand.<p>
 				<div class="sub">
-					<bigText><m id="o">Tip 1</m> - Tool overlook.</bigText>
-
-					<div class="sub">
-						<p>This will run through the tools on the right hand.</p>
-						<p><m id="o">M</m> - Rectangular Marquee Tool:</p>
-
-						<div class="sub indent">
-							<p>"Your basic select tool."</p>
-							<p>Settings at the top:</p>
-
-							<div class="sub">
-								<p>Selection type:</p>
-
-								<div class="sub">
-									<p>Selection tools are useful when you want to select a complex shape.</p>
-									<p><m>Replace selection</m> - The default option, everytime you draw a rectangle, it'll replace the old one.</p>
-									<p><m>Add to selection</m> - Instead of replaceing the existing rectangle, it'll add to it.</p>
-									<p><m>Subtract from selection</m> - Instead of replaceing the existing rectangle, it'll remove from it.</p>
-								</div>
-								<p><m>Transparent Color</m> - If you're using a background, set it to the transparent color which will remove it form selection.</p>
-								<p><m>Rotation Pivot</m> - This setting sets the point at which the selection will be rotated around.</p>
-								<p><m>Rotation Algorithm</m> - The way the image will be rotated, fast rotation is simple, but might look bad, while RotSprite seems to do the job better.</p>
-							</div>
-							<p>Key combos:</p>
-
-							<div class="sub">
-								<p><m>LMB</m> - Draw a new rectangle.</p>
-								<p><m>RMB</m> - Remove from an existing rectangle.</p>
-								<p><m>LMB + Shift</m> - Add to the existing rectangle.</p>
-								<p><m>LMB + Alt</m> - Rotate the rectangle.</p>
-								<p><m>Shift + LMB</m> - Draw a square.</p>
-								<p><m>Control + LMB</m> - Draw a rectangle form the staring position.</p>
-								<p><m>Shift + Control + LMB</m> - Draw a square form the staring position.</p>
-							</div>
-						</div>
-						<p><m id="o">B</m> - Pencil Tool:</p>
-
-						<div class="sub indent">
-							<p>"The pencil is one of the most simple and useful tools in your arsenal."</p>
-							<p>Settings at the top:</p>
-
-							<div class="sub">
-								<p><m>Brush Type</m> - Controls the shape of the tool, I'll teach you how to create custom brushes later.</p>
-								<p><m>Brush Size</m> - Sets the width of the brush, useful for creating outlines.</p>
-								<p><m>Ink</m> - This setting is quite complex, you can mess around yourself. I'll make a dedicated tip later on.</p>
-								<p><m>Pixel Perfect</m> - No need to have it on, makes your lines clean, turn it off if you're not drawing lines.</p>
-							</div>
-							<p>Key combos:</p>
-
-							<div class="sub">
-								<p><m>LMB</m> - Draw using your foreground colour.</p>
-								<p><m>RMB</m> - Lays down your background colour, if you set it to mask, It'll act as an eraser.</p>
-								<p><m>Shift + LMB</m> - Draw a starting point, and It'll start draw a line between the point and your mouse, acts as a faster way of drawing a line.</p>
-								<p><m>Shift + Control + LMB</m> - Same as before, but the lines are at clean rotations.</p>
-							</div>
-						</div>
-						<p><m id="o">G</m> - Paint Bucket Tool:</p>
-
-						<div class="sub indent">
-							<p>"Makes your life easier one bucketful at a time."</p>
-							<p>Settings at the top:</p>
-
-							<div class="sub">
-								<p><m>Tolerance</m> - Sets the max difference between colours that will be filled, meaning the higher the tolerance, the more colours will be filled in.</p>
-								<p><m>Contigious</m> - Turning this on means that it'll only colour in pixels that are connected.</p>
-								<p><m>Extra paint bucket options</m> - Pretty self explanatory, don't really need them, but are nice to have.</p>
-								<p><m>Ink</m> - Same as the Pencil Tool.</p>
-							</div>
-							<p>Key combos:</p>
-
-							<div class="sub">
-								<p><m>LMB</m> - Draw using your foreground colour.</p>
-								<p><m>RMB</m> - Lays down your background colour, if you set it to mask, It'll act as an eraser.</p>
-							</div>
-						</div>
-					</div>
-					<bigText><m id="o">Tip 2</m> - More tools.</bigText>
-
-					<div class="sub">
-						<p>This is a collection of the less known tools and features which are really useful.</p>
-						<p><m id="o">Shift + R</m> - Replace colour:</p>
-
-						<div class="sub">
-							<p>"Paint Bucket Tool on drugs."</p>
-							
-							<p><m>From</m> - Chooses the colour you to select, once you press the button, you can hold it down to use a pipette to select your colour.</p>
-							<p><m>To</m> - Chosses the colour that it'll be changed to. Pipette works the same.</p>
-							<p><m>Tolerance</m> - Works the same as the tolerance for the Paint Bucket Tool.</p>
-							<p><m>Preview</m> - If it's ticked, it'll show you what the outcome will look like.</p>
-						</div>
-						<p><m id="o">F9</m> - Convolution Matrix:</p>
-
-						<div class="sub">
-							<p>"Full of really awesome secrets!"</p>
-							
-							<p><m>Outlines</m> - The two bottom options, in my opinion, are the best and the most usefull ever. Creating outlines by hand takes forever, Aseprite will do it in a flash!</p>
-							<p>There are many more options, and I'll leave discorvering them to you!</p>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- Snippets -->
 		<section>
-			<bigText id="Snippets"><m id="y">- Snippets -</m></bigText>
+			<h1 id="Snippets"><mark class="Yellow">- Snippets -</mark></h1>
 
 			<div class="sub">
 				<p>
@@ -613,64 +515,64 @@
 			</div>
 
 			<div class="sub">
-				<bigText>~ Variables ~</bigText>
+				<h1>~ Variables ~</h1>
 
 				<div class="sub">
 					<p> Variables are like containers, they can store different types of data. </p>
-					<div class="script">
+					<div class="script Yellow">
 						<pre>
               // int is a full number.
               int playerHealth = 123;
-              
+
               // float is a number with a decimal or floating point.
               float weaponRange = 123.456f;
-              
+
               // double is a float with a higher level of accuracy.
               double horizontalRotation = 123.456;
-              
+
               // string is a list of letters, numbers, and other characters.
               string playerName = "Justin";
-              
+
               // char is a single character that strings are built out of.
               char playerInitial = 'J';
-              
+
               // var is a special type that will change depending on what's put on the right.
               var aNumber = 123;
               var aString = "Hello World!"
             </pre>
 					</div>
-					<p><a id="y" href="https://www.tutorialspoint.com/csharp/csharp_variables.htm" target="_blank">More about Variables.</a></p>
+					<p><a class="Yellow" href="https://www.tutorialspoint.com/csharp/csharp_variables.htm" target="_blank">More about Variables.</a></p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<bigText>~ Arrays ~</bigText>
+				<h1>~ Arrays ~</h1>
 
 				<div class="sub">
 					<p> Arrays are a type of variable that can hold a set amount of values. </p>
-					<div class="script">
+					<div class="script Yellow">
 						<pre>
               // an array is defined using type[] which means you can turn pretty much anything into an array.
               // There are multiple ways to initialize arrays, one is to declare its size.
               int[] Names = new int[10];
-              
+
               // And then you can edit each one specifically.
               Names[0] = "Justinas";
-              
+
               // You can also initialise them using a list.
               int[] myIntegers = new { 0, 20, 30, 123};
             </pre>
 					</div>
-					<p><a id="y" href="https://www.tutorialspoint.com/csharp/csharp_arrays.htm" target="_blank">More about Arrays.</a></p>
+					<p><a class="Yellow" href="https://www.tutorialspoint.com/csharp/csharp_arrays.htm" target="_blank">More about Arrays.</a></p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<bigText>~ Classes ~</bigText>
+				<h1>~ Classes ~</h1>
 
 				<div class="sub">
 					<p> Every script you make in Unity will start as a class. </p>
-					<div class="script">
+					<div class="script Yellow">
 						<pre>
               // "using" is a keyword that includes namespaces.
               using UnityEngine;
@@ -689,16 +591,16 @@
               }
             </pre>
 					</div>
-					<p><a id="y" href="https://www.tutorialspoint.com/csharp/csharp_arrays.htm" target="_blank">More about Classes.</a></p>
+					<p><a class="Yellow" href="https://www.tutorialspoint.com/csharp/csharp_arrays.htm" target="_blank">More about Classes.</a></p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<bigText>~ Fields ~</bigText>
+				<h1>~ Fields ~</h1>
 
 				<div class="sub">
 					<p> More about the variables that are defined at the start of the class. </p>
-					<div class="script">
+					<div class="script Yellow">
 						<pre>
             // First of all, fields can't be of type var, and therefore have to be set.
             int maxHealth = 10;
@@ -724,13 +626,13 @@
 			</div>
 
 			<div class="sub">
-				<bigText>~ Attributes ~</bigText>
+				<h1>~ Attributes ~</h1>
 
 				<div class="sub">
 					<p> Attributes are like the cherry on top, they modify variables in various ways. </p>
-					<div class="script">
+					<div class="script Yellow">
 						<pre>
-            // Headers create a space and a bold bigText in the editor.
+            // Headers create a space and a bold h1 in the editor.
             [Header("Variables!")]
 
             // SerializeField will force a field to show up in the editor, even if it's private.
@@ -758,11 +660,11 @@
 			</div>
 
 			<div class="sub">
-				<bigText>~ Random numbers ~</bigText>
+				<h1>~ Random numbers ~</h1>
 
 				<div class="sub">
 					<p>Random numbers are very usefull to, well, add randomisation to your game.</p>
-					<div class="script">
+					<div class="script Yellow">
 						<pre>
               // this will generate a random integer.
               var randomIntNumber = Random.Range(0, 100);
@@ -777,222 +679,225 @@
 
 		<!-- Stuff To Know -->
 		<section>
-			<bigText id="StuffToKnow"><m id="g">- Stuff to know -</m></bigText>
+			<h1 id="StuffToKnow"><mark class="Green">- Stuff to know -</mark></h1>
 
 			<div class="sub">
-				<bigText>~ WiFi passwords that you've forgotten ~</bigText>
+				<hr>
+				<h1>~ WiFi passwords that you've forgotten ~</h1>
 
 				<div class="sub">
-					<p>Name : <m id="g">ELAM_Guest</m></p>
+					<p>Name : <mark class="Green">ELAM_Guest</mark></p>
 					<p>Password : Amb1t10n</p>
-					<p>Name : <m id="g">ELAM</m></p>
+					<p>Name : <mark class="Green">ELAM</mark></p>
 					<p>Password : EL4ME154RZ</p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<bigText>~ Glossary of words you should know ~</bigText>
+				<h1>~ Glossary of words you should know ~</h1>
 
 				<div class="sub">
 					<p>You can press the highlighted text to learn more.</p>
 					<p>
-						<a href="https://en.wikipedia.org/wiki/Integrated_development_environment" target="_blank" id="g">IDE</a>
+						<a href="https://en.wikipedia.org/wiki/Integrated_development_environment" target="_blank" class="Green">IDE</a>
 						- Integrated Development Environment.
 					</p>
 					<p>
-						<a href="https://en.wikipedia.org/wiki/Digital_audio_workstation" target="_blank" id="g">DAW</a>
+						<a href="https://en.wikipedia.org/wiki/Digital_audio_workstation" target="_blank" class="Green">DAW</a>
 						- Digital Audio Workstation.
 					</p>
 					<p>
-						<a href="https://en.wikipedia.org/wiki/Interpolation" target="_blank" id="g">Interpolation</a>
+						<a href="https://en.wikipedia.org/wiki/Interpolation" target="_blank" class="Green">Interpolation</a>
 						- Finding a point a certain distance in between two known points.
 					</p>
-					<p><m id="g">LMB</m> - Abbreviation of Left Mouse Button. RMB for right, and MMB for the middle one.</p>
+					<p><mark class="Green">LMB</mark> - Abbreviation of Left Mouse Button. RMB for right, and MMB for the middle one.</p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<bigText>~ Developers you should check out ~</bigText>
+				<h1>~ Developers you should check out ~</h1>
 
 				<div class="sub">
 					<p>Justinas "jstn_as" Grigas -
-						<a href="https://jstn-as.github.io/" target="_blank" id="g">Website</a> -
-						<a href="https://twitter.com/jstn_as" target="_blank" id="g">Twitter</a> -
-						<a href="https://jstn-as.itch.io/" target="_blank" id="g">Games</a> -
+						<a href="https://jstn-as.github.io/" target="_blank" class="Green">Website</a> -
+						<a href="https://twitter.com/jstn_as" target="_blank" class="Green">Twitter</a> -
+						<a href="https://jstn-as.itch.io/" target="_blank" class="Green">Games</a> -
 						Me, I make games, I love to program and make websites.</p>
 
 					<p>Daniel "Managore" Linssen -
-						<a href="https://daniellinssen.net/" target="_blank" id="g">Website</a> -
-						<a href="https://twitter.com/Managore" target="_blank" id="g">Twitter</a> -
-						<a href="https://managore.itch.io/" target="_blank" id="g">Games</a> -
+						<a href="https://daniellinssen.net/" target="_blank" class="Green">Website</a> -
+						<a href="https://twitter.com/Managore" target="_blank" class="Green">Twitter</a> -
+						<a href="https://managore.itch.io/" target="_blank" class="Green">Games</a> -
 						He's the guy I aspire to be, his games are quality, good quality.</p>
 
 					<p>Anton Kudin -
-						<a href="http://www.antonkudin.me/" target="_blank" id="g">Website</a> -
-						<a href="https://twitter.com/antonkudin" target="_blank" id="g">Twitter</a> -
-						<a href="http://www.antonkudin.me/megasphere/" target="_blank" id="g">Games</a> -
+						<a href="http://www.antonkudin.me/" target="_blank" class="Green">Website</a> -
+						<a href="https://twitter.com/antonkudin" target="_blank" class="Green">Twitter</a> -
+						<a href="http://www.antonkudin.me/megasphere/" target="_blank" class="Green">Games</a> -
 						He's working on a really cool pixel game that looks absolutely amazing, big inspiration.</p>
 
 					<p>Richard "Disasterpeace" Vreeland -
-						<a href="http://disasterpeace.com/" target="_blank" id="g">Website</a> -
-						<a href="https://twitter.com/disasterpeace" target="_blank" id="g">Twitter</a> -
-						<a href="http://disasterpeace.com/music" target="_blank" id="g">Music</a> -
+						<a href="http://disasterpeace.com/" target="_blank" class="Green">Website</a> -
+						<a href="https://twitter.com/disasterpeace" target="_blank" class="Green">Twitter</a> -
+						<a href="http://disasterpeace.com/music" target="_blank" class="Green">Music</a> -
 						He's quite a popular chiptune music artist, having made music for FEZ and Hyper Light Drifter and many more, love his work.</p>
 
 					<p>Mark Brown -
-						<a href="https://twitter.com/britishgaming" target="_blank" id="g">Twitter</a> -
-						<a href="https://www.youtube.com/channel/UCqJ-Xo29CKyLTjn6z2XwYAw" target="_blank" id="g">Youtube</a> -
-						He's my favourite video games journalist, look at his stuff if you want to learn more about the industry, and how to make games well.</p>
+						<a href="https://twitter.com/britishgaming" target="_blank" class="Green">Twitter</a> -
+						<a href="https://www.youtube.com/channel/UCqJ-Xo29CKyLTjn6z2XwYAw" target="_blank" class="Green">Youtube</a> -
+						He's my favourite video games journalist and I can't recomend his stuff enough. His stuff will teach you so so much about the design of games </p>
 
 					<p>Brendan "Sully" Sullivan -
-						     
-						<a href="https://twitter.com/artofsully" target="_blank" id="g">Twitter</a> -
-						<a href="https://sketchfab.com/artofsully" target="_blank" id="g">Sketchfab</a> -
-						<a href="https://www.artstation.com/brendansullivan" target="_blank" id="g">ArtStation</a> -
+						<a href="https://twitter.com/artofsully" target="_blank" class="Green">Twitter</a> -
+						<a href="https://sketchfab.com/artofsully" target="_blank" class="Green">Sketchfab</a> -
+						<a href="https://www.artstation.com/brendansullivan" target="_blank" class="Green">ArtStation</a> -
 						I've been following this guy for some time, I love his artstyle and I feel like that's how I want my 3D games to look at!</p>
+						<div class="sketchfab-embed-wrapper">
+
+						</div>
 
 					<p>Nitrome -
-						<a href="https://artofsully.com/" target="_blank" id="g">Website</a> -
+						<a href="https://nitrome.com/" target="_blank" class="Green">Website</a> -
 						I've been playing their games quite religiously since I was a child. They're definitely one of the biggest inspirations for my own games.</p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<bigText>~ Websites that are quite cool ~</bigText>
+				<h1>~ Websites that are quite cool ~</h1>
 
 				<div class="sub">
 					<p>
-						<a href="https://www.google.com/" target="_blank" id="g">Google</a> -
+						<a href="https://www.google.com/" target="_blank" class="Green">Google</a> -
 						When you come across a problem that just won't get solved, ask Google, because Google tends to know.
 					</p>
 					<p>
-						<a href="https://lospec.com/" target="_blank" id="g">Lospec</a> -
+						<a href="https://lospec.com/" target="_blank" class="Green">Lospec</a> -
 						Use this website if you want to learn more about pixel art, it has a palette list of cool colours, a tutorial section if you want to learn more. and a heap of additional tools.
 					</p>
 					<p>
-						<a href="https://coolors.co/" target="_blank" id="g">Coolors</a> -
+						<a href="https://coolors.co/" target="_blank" class="Green">Coolors</a> -
 						Use this if you need a palette for your next project.
 					</p>
 					<p>
-						<a href="https://pixelation.org/index.php" target="_blank" id="g">Pixelation</a> -
+						<a href="https://pixelation.org/index.php" target="_blank" class="Green">Pixelation</a> -
 						This is one of the biggest pixel art forums, has tons of discussions about pixel art.
 					</p>
 					<p>
-						<a href="http://pixeljoint.com/" target="_blank" id="g">Piexl Joint</a> -
+						<a href="http://pixeljoint.com/" target="_blank" class="Green">Piexl Joint</a> -
 						This is probably the biggest pixel art forum, just so you can learn more.
 					</p>
 					<p>
-						<a href="https://sketchfab.com/" target="_blank" id="g">Sketchfab</a> -
+						<a href="https://sketchfab.com/" target="_blank" class="Green">Sketchfab</a> -
 						If you're a 3D modeller, you can showcase your models here. There's a lot of awesome work on display here, I tend to get lost.
 					</p>
 					<p>
-						<a href="https://www.artstation.com/" target="_blank" id="g">ArtStation</a> -
+						<a href="https://www.artstation.com/" target="_blank" class="Green">ArtStation</a> -
 						A huge collection of art, and like sketchfab, can be used to showcase your own work, which is super useful when you're building a portfolio.
 					</p>
 					<p>
-						<a href="https://itch.io/" target="_blank" id="g">Itch</a> -
+						<a href="https://itch.io/" target="_blank" class="Green">Itch</a> -
 						This site makes hosting games really easy, and it work similarly to Steam.
 					</p>
 					<p>
-						<a href="https://github.com/" target="_blank" id="g">GitHub</a> -
+						<a href="https://github.com/" target="_blank" class="Green">GitHub</a> -
 						GitHub is the most popular repositiory where you can store work for free.
 					</p>
 					<p>
-						<a href="https://bitbucket.org/" target="_blank" id="g">BitBucket</a> -
+						<a href="https://bitbucket.org/" target="_blank" class="Green">BitBucket</a> -
 						Very similar to GitHub, the only major difference being that you can host private projects for free.
 					</p>
 					<p>
-						<a href="http://www.senshistock.com/sketch" target="_blank" id="g">Senshi Stock</a> -
+						<a href="http://www.senshistock.com/sketch" target="_blank" class="Green">Senshi Stock</a> -
 						This will generate random poses for you to study anatomy and practice drawing.
 					</p>
 					<p>
-						<a href="https://www.dafont.com/" target="_blank" id="g">Dafont</a> -
+						<a href="https://www.dafont.com/" target="_blank" class="Green">Dafont</a> -
 						Use this website to find a font for your project, it has a good range of pixel fonts, and it's actually the place where I found this exact font.
 					</p>
 					<p>
-						<a href="https://forums.tigsource.com/" target="_blank" id="g">TIGForums</a> -
+						<a href="https://forums.tigsource.com/" target="_blank" class="Green">TIGForums</a> -
 						This is a forum around gaming, and it has a loot of cool stuff like <a href="https://forums.tigsource.com/index.php?topic=14166.0" target="_blank">free pixel art</a>.
 					</p>
 					<p>
-						<a href="https://www.w3schools.com/" target="_blank" id="g">W3Schools</a> -
+						<a href="https://www.w3schools.com/" target="_blank" class="Green">W3Schools</a> -
 						If you want to build your own website from scratch, this place will teach you everything you need to know.
 					</p>
 				</div>
 			</div>
 			<div class="sub">
-				<bigText>~ Programs you should have ~</bigText>
+				<h1>~ Programs you should have ~</h1>
 
 				<div class="sub">
-					<p><a href="https://unity3d.com/" target="_blank" id="g">Unity</a> - <m>3D / 2D Games Engine</m> -
+					<p><a href="https://unity3d.com/" target="_blank" class="Green">Unity</a> - <mark class="Black">3D / 2D Games Engine</mark> -
 						Unity is the most popular, free to use Game Engine around, and it deserves that title.</p>
 
-					<p><a href="https://www.yoyogames.com/gamemaker" target="_blank" id="g">GameMaker: Studio</a> - <m>2D Games Engine</m> -
+					<p><a href="https://www.yoyogames.com/gamemaker" target="_blank" class="Green">GameMaker: Studio</a> - <mark class="Black">2D Games Engine</mark> -
 						Game Maker is a game engine used to soley make 2D games, and as such, it probably is the best Game Engine for 2D games.</p>
 
-					<p><a href="https://godotengine.org/" target="_blank" id="g">Godot</a> - <m>3D / 2D Games Engine</m> -
+					<p><a href="https://godotengine.org/" target="_blank" class="Green">Godot</a> - <mark class="Black">3D / 2D Games Engine</mark> -
 						Godot is an open source engine similar to Unity.</p>
 
-					<p><a href="https://love2d.org/" target="_blank" id="g">LÖVE</a> - <m>2D Games Engine</m> -
+					<p><a href="https://love2d.org/" target="_blank" class="Green">LÖVE</a> - <mark class="Black">2D Games Engine</mark> -
 						Love is a lightweight, free to use, 2D Games Engine that's quite good for smaller, simpler games, I used this to learn Lua.</p>
 
-					<p><a href="https://www.pygame.org/news" target="_blank" id="g">Pygame</a> - <m>2D Games Engine</m> -
+					<p><a href="https://www.pygame.org/news" target="_blank" class="Green">Pygame</a> - <mark class="Black">2D Games Engine</mark> -
 						Python equivalent of LOVE. I've make snake, really fun!</p>
 
-					<p><a href="https://www.construct.net/en" target="_blank" id="g">Construct 3</a> - <m>2D Games Engine</m> -
+					<p><a href="https://www.construct.net/en" target="_blank" class="Green">Construct 3</a> - <mark class="Black">2D Games Engine</mark> -
 						Construct 3 is a Games Engine that runs in your browser, looks pretty cool.</p>
 
-					<p><a href="https://aws.amazon.com/lumberyard/" target="_blank" id="g">Amazon Lumberyard</a> - <m>3D Games Engine</m> -
+					<p><a href="https://aws.amazon.com/lumberyard/" target="_blank" class="Green">Amazon Lumberyard</a> - <mark class="Black">3D Games Engine</mark> -
 						I haven't really heard much about this Games Engine, since it seems to be in beta, but considering that it's made by Amazon, and is used to make Star Citizen, I feel like this is going to be a big one.</p>
 
-					<p><a href="https://www.aseprite.org/" target="_blank" id="g">Aseprite</a> - <m>Pixel Art Editor</m> -
+					<p><a href="https://www.aseprite.org/" target="_blank" class="Green">Aseprite</a> - <mark class="Black">Pixel Art Editor</mark> -
 						Aseprite is probably the best pixel art tool, Photoshop is for noobs with money. You can either buy it, or compile it for free from <a href="https://github.com/aseprite/aseprite">Github</a>, or ask me in person.</p>
 
-						<p><a href="http://pulkomandy.tk/projects/GrafX2" target="_blank" id="g">GrafX2</a> - <m>Pixel Art Editor</m> -
+						<p><a href="http://pulkomandy.tk/projects/GrafX2" target="_blank" class="Green">GrafX2</a> - <mark class="Black">Pixel Art Editor</mark> -
 						This is a super retro pixel art editor that used to be very popular back in the day, but it's mostly become obselete, though still is a great editor.</p>
 
-					<p><a href="https://graphicsgale.com/us/" target="_blank" id="g">Graphics Gale</a> - <m>Pixel Art Editor</m> -
+					<p><a href="https://graphicsgale.com/us/" target="_blank" class="Green">Graphics Gale</a> - <mark class="Black">Pixel Art Editor</mark> -
 						A free alternative to Aseprite, and trust me, this is an awesome free alternative, people say it's better for animation, but it's quite a retro tool.</p>
 
-					<p><a href="https://blackflux.com/node/10" target="_blank" id="g">PixelShop</a> - <m>Pixel Art Editor</m> -
+					<p><a href="https://blackflux.com/node/10" target="_blank" class="Green">PixelShop</a> - <mark class="Black">Pixel Art Editor</mark> -
 						Quite similar to Graphics Gale in it's UI, but it has many features that make it stand out.</p>
 
-					<p><a href="https://pyxeledit.com/" target="_blank" id="g">Pyxel Edit</a> - <m>Pixel Art Editor</m> -
+					<p><a href="https://pyxeledit.com/" target="_blank" class="Green">Pyxel Edit</a> - <mark class="Black">Pixel Art Editor</mark> -
 						Yet another pixel editor, works in tiles which makes it really useful when creating tilesets.</p>
 
-					<p><a href="https://notepad-plus-plus.org/" target="_blank" id="g">Notepad++</a> - <m>Text Editor</m> -
+					<p><a href="https://notepad-plus-plus.org/" target="_blank" class="Green">Notepad++</a> - <mark class="Black">Text Editor</mark> -
 						A very lightweight IDE, just like the name suggests, it's a notepad on drugs, and should be used instead of notepad.</p>
 
-					<p><a href="https://atom.io/" target="_blank" id="g">Atom</a> - <m>Text Editor</m> -
+					<p><a href="https://atom.io/" target="_blank" class="Green">Atom</a> - <mark class="Black">Text Editor</mark> -
 						A relatively heavyweight IDE that can be used for pretty much everything.</p>
 
-					<p><a href="https://code.visualstudio.com/" target="_blank" id="g">Visual Studio Code</a> - <m>Source Code Editor</m> -
+					<p><a href="https://code.visualstudio.com/" target="_blank" class="Green">Visual Studio Code</a> - <mark class="Black">Source Code Editor</mark> -
 						A lightwight, open source source code editor that runs everywhere.</p>
 
-					<p><a href="https://www.sublimetext.com/" target="_blank" id="g">Sublime Text</a> - <m>Text Editor</m> -
+					<p><a href="https://www.sublimetext.com/" target="_blank" class="Green">Sublime Text</a> - <mark class="Black">Text Editor</mark> -
 						Sublime is an IDE that's the best of the both worlds, quite lightweight, but also makes life much easier.</p>
 
-					<p><a href="http://brackets.io/" target="_blank" id="g">Brackets</a> - <m>Source Code Editor</m> -
+					<p><a href="http://brackets.io/" target="_blank" class="Green">Brackets</a> - <mark class="Black">Source Code Editor</mark> -
 						If you, like me, like to build webpages from scratch, this might be the wonder tool you're looking for.</p>
 
-					<p><a href="https://www.jetbrains.com/rider/" target="_blank" id="g">JetBrains Rider</a> - <m>IDE</m> -
+					<p><a href="https://www.jetbrains.com/rider/" target="_blank" class="Green">JetBrains Rider</a> - <mark class="Black">IDE</mark> -
 						An IDE targeted for C#, It has probably the best Unity plugin which makes writing scripts much easier, trust me.</p>
 
-					<p><a href="https://desktop.github.com/" target="_blank" id="g">GitHub Desktop</a> - <m>GUI for Git</m> -
+					<p><a href="https://desktop.github.com/" target="_blank" class="Green">GitHub Desktop</a> - <mark class="Black">GUI for Git</mark> -
 						Makes managing and uploading your projects super easy, GitHub by default can be quite hard to use, this makes it much easier.</p>
 
-					<p><a href="http://crocotile3d.com/" target="_blank" id="g">Crocotile 3D</a> - <m>Modelling Software</m> -
+					<p><a href="http://crocotile3d.com/" target="_blank" class="Green">Crocotile 3D</a> - <mark class="Black">Modelling Software</mark> -
 						Use this to make 3D models that use 2D tiles, it produces awesome looking models.</p>
 
-					<p><a href="https://ephtracy.github.io/" target="_blank" id="g">MagicaVoxel</a> - <m>Voxel Art Editor</m> -
+					<p><a href="https://ephtracy.github.io/" target="_blank" class="Green">MagicaVoxel</a> - <mark class="Black">Voxel Art Editor</mark> -
 						This is a free voxel art editor, my personal favourite!</p>
 
-					<p><a href="https://blackflux.com/node/11" target="_blank" id="g">VoxelShop</a> - <m>Voxel Art Editor</m> -
+					<p><a href="https://blackflux.com/node/11" target="_blank" class="Green">VoxelShop</a> - <mark class="Black">Voxel Art Editor</mark> -
 						This is an open source voxel art modeller and runs on pretty much everything, Has some features that MagicaVoxel doesn't.</p>
 
-					<p><a href="http://www.minddesk.com/" target="_blank" id="g">Qubicle</a> - <m>Voxel Art Editor</m> -
+					<p><a href="http://www.minddesk.com/" target="_blank" class="Green">Qubicle</a> - <mark class="Black">Voxel Art Editor</mark> -
 						This is the voxel art tool that Crossy Road was made in, really good, but it ain't cheap.</p>
 
-					<p><a href="https://boscaceoil.net/" target="_blank" id="g">Bocsca Ceoil</a> - <m>DAW</m> -
+					<p><a href="https://boscaceoil.net/" target="_blank" class="Green">Bocsca Ceoil</a> - <mark class="Black">DAW</mark> -
 						Use this to make 8-bit / chiptune music for your game. Here's <a href="https://www.youtube.com/watch?v=fZeZ75gM9p4" target="_blank">Tutorial</a> by Brackeys.</p>
 				</div>
 			</div>
@@ -1000,18 +905,18 @@
 
 		<!-- About -->
 		<section>
-			<bigText id="About"><m id="blu">- About -</m></bigText>
+			<h1 id="About"><mark class="Blue">- About -</mark></h1>
 
 			<div class="sub">
-				<bigText>~ What is this? ~</bigText>
+				<h1>~ What is this? ~</h1>
 
 				<div class="sub">
-					<p><m class="bla">Justin's Holy HandBook_</m> Is a website and a tool that contains a trove of links and content to help you get better at creating games. This originally started as a text document for Ben, but has since evolved into its own webpage. It's currently onlt being developed by yours truly, but I hope more of you join me in expanding the Holy Hand Book!</p>
+					<p><mark class="Logo Black">Justin's Holy HandBook_</mark> Is a website and a tool that contains a trove of links and content to help you get better at creating games. This originally started as a text document for Ben, but has since evolved into its own webpage. It's currently onlt being developed by yours truly, but I hope more of you join me in expanding the Holy Hand Book!</p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<bigText>~ How do I use this? ~</bigText>
+				<h1>~ How do I use this? ~</h1>
 
 				<div class="sub">
 					<p>
@@ -1021,19 +926,19 @@
 			</div>
 
 			<div class="sub">
-				<bigText>~ How do I help? ~</bigText>
+				<h1>~ How do I help? ~</h1>
 
 				<div class="sub">
 					<p>
 						If you want to help, than first of all thank you for considering contributing.
 						You can send me an
-						<a href="mailto:jgrigas@elam.co.uk?subject=Holy-HandBook" target="_blank" id="blu">Email</a>
+						<a class="Blue" href="mailto:jgrigas@elam.co.uk?subject=Holy-HandBook" target="_blank">Email</a>
 						with any thoughs or suggestions.
 						You could also send me a message on
-						<a href="https://twitter.com/jstn_as" target="_blank" id="blu">Twitter</a>.
+						<a class="Blue" href="https://twitter.com/jstn_as" target="_blank" >Twitter</a>.
 						At the end of the day, you could just talk to me in person, I don't bite :D.
 						Or if you are feeling extra helpful, you can help write this on
-						<a href="https://github.com/jstn-as/jstn-as.github.io" target="_blank" id="blu">GitHub</a>.
+						<a class="Blue" href="https://github.com/jstn-as/jstn-as.github.io" target="_blank">GitHub</a>.
 					</p>
 				</div>
 			</div>
@@ -1041,45 +946,45 @@
 
 		<!-- Extra -->
 		<section>
-			<bigText id="Extra"><m id="p">- Extra -</m></bigText>
+			<h1 id="Extra"><mark class="Purple">- Extra -</mark></h1>
 			<div class="sub">
-				<bigText>~ Credits ~</bigText>
+				<h1>~ Credits ~</h1>
 				<div class="sub">
 					<p>Contributors: Justinas Grigas</p>
-					<p>Palette: <a href="https://lospec.com/palette-list/equpix15" target="_blank" id="p">Equpix15</a></p>
-					<p>Font: <a href="https://fontenddev.com/fonts/comicoro/" target="_blank" id="p">Comicoro</a></p>
+					<p>Palette: <a class="Purple" href="https://lospec.com/palette-list/equpix15" target="_blank">Equpix15</a></p>
+					<p>Font: <a class="Purple" href="https://fontenddev.com/fonts/comicoro/" target="_blank">Comicoro</a></p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<bigText>~ Version ~</bigText>
+				<h1>~ Version ~</h1>
 				<div class="sub">
-					<p>The version of this document is: <m id="p">2018/11/08:21</m></p>
+					<p>The version of this document is: <mark class="Purple">2018/12/01:01</mark></p>
 				</div>
 			</div>
 
 			<div class="sub">
-				<bigText>~ Colours ~</bigText>
+				<h1>~ Colours ~</h1>
 				<div class="sub">
 					<p>Use at your own risk!</p>
-					<button id="r" class="btn red" onclick="SetPageColour(0)">Red</button>
-					<button id="o" class="btn orange" onclick="SetPageColour(1)">Orange</button>
-					<button id="y" class="btn yellow" onclick="SetPageColour(2)">Yellow</button>
-					<button id="g" class="btn green" onclick="SetPageColour(3)">Green</button>
-					<button id="blu" class="btn blue" onclick="SetPageColour(4)">Blue</button>
-					<button id="p" class="btn purple" onclick="SetPageColour(5)">Purple</button>
-					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn black" onclick="SetPageColour(6)">Black</button>
-					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn default" onClick="SetPageColourRandomly()">Random</button>
-					<button style="background-color: #2a2a3a; color: #fff8c0;" class="btn default" onClick="window.location.reload()">Default</button>
+					<button class="Button Red" onclick="SetPageColour(0)">Red</button>
+					<button class="Button Orange" onclick="SetPageColour(1)">Orange</button>
+					<button class="Button Yellow" onclick="SetPageColour(2)">Yellow</button>
+					<button class="Button Green" onclick="SetPageColour(3)">Green</button>
+					<button class="Button Blue" onclick="SetPageColour(4)">Blue</button>
+					<button class="Button Purple" onclick="SetPageColour(5)">Purple</button>
+					<button class="Button Black" onclick="SetPageColour(6)">Black</button>
+					<button class="Button Black" onClick="SetPageColourRandomly()">Random</button>
+					<button class="Button Black" onClick="window.location.reload()">Default</button>
 				</div>
 			</div>
 		</section>
 
 		<footer>
-			<span><m class="logo">Designed by Justinas Grigas.</m></span>
+			<span><mark class="Logo Black">Designed by Justinas Grigas.</mark></span>
 			<table class="links">
 				<tr>
-					<th><a href="https://jstn-as.github.io/" target="_blank" id="p">jstn-as.github.io</a></th>
+					<th><a class="Purple" href="https://jstn-as.github.io/" target="_blank">jstn-as.github.io</a></th>
 				</tr>
 			</table>
 		</footer>
