@@ -20,12 +20,15 @@ body
 	margin: auto;
 }
 
+iframe, hr, section {
+	border: #d44e52 solid 2px;
+}
+
 section
 {
 	background-color: #fff8c0;
 	padding: 10px;
 	margin: 10px;
-	border: #d44e52 solid 2px;
 }
 
 h1
@@ -38,8 +41,7 @@ h1
 
 hr {
 	width: 256px;
-	border-style: solid;
-	border-color: #d44e52;
+	border-width: 1px;
 }
 
 p
@@ -65,8 +67,4 @@ m {
 ::-moz-selection, ::selection  { /* Code for Firefox */
 	color: #fff8c0;
 	background-color: #d44e52;
-}
-
-iframe {
-	border: #d44e52 solid 2px;
 }
