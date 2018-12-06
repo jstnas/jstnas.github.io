@@ -675,6 +675,34 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="sub">
+				<h1>~ Getters and Setters ~</h1>
+
+				<div class="sub">
+					<p>Private objects can't be seen by other classes (hence the name) the way we get around this is by using getters and setters.</p>
+					<div class="script Yellow">
+						<pre>
+              // We don't want other scripts to directly change the health of the player.
+              [SerializeField] private int _health;
+
+              // You instead create functions that modify the variables, which also allows you to do other things on top.
+              // This is a setter which modifies (sets) a variables.
+              public void Heal(int amount)
+              {
+              	_health += amount;
+              	// Do other stuff too.
+              }
+
+              // Getters return a variable, so that other classes can see it.
+              public int GetHealth()
+              {
+              	return _health;
+              }
+            </pre>
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<!-- Stuff To Know -->
