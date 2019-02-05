@@ -116,8 +116,8 @@ div.script {
 	border-left: 2px dashed var(--black);
 }
 /* Borders */
-.Button, th, div.script, section, iframe  {
-	border: 2px solid var(--black);
+.Button, th, div.script, section, iframe, pre {
+	border: 2px solid;
 }
 /* Highlight colours. */
 .Red {
