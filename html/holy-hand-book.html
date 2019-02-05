@@ -8,31 +8,31 @@
 		<meta name="description" content="A digital equivalent to a holy script of your choice.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="shortcut icon" type="image/png" href="../png/favicon-holy-hand-book.png"/>
+		<link rel="shortcut icon" type="image/png" href="/png/favicon-holy-hand-book.png"/>
 
 		<!-- Javascript programming for the page -->
 		<script>
-			var backgroundColourArray = [
+			let backgroundColourArray = [
 				'#d44e52', '#ec8a4b', '#ffcc68', '#80ac40', '#55a894', '#523c4e', '#2a2a3a'
 			];
 
-			var textColourArray = [
+			let textColourArray = [
 				'#fff8c0', '#fff8c0', '#2a2a3a', '#2a2a3a', '#fff8c0', '#fff8c0', '#fff8c0'
 			];
 
 			function SetPageColour(index) {
-				var markers = document.querySelectorAll("mark");
-				var links = document.querySelectorAll("a");
-				var snippets = document.querySelectorAll("div.script");
+				let markers = document.querySelectorAll("mark");
+				let links = document.querySelectorAll("a");
+				let snippets = document.querySelectorAll("div.script");
 				ReplaceColour(markers, index);
 				ReplaceColour(links, index);
 				ReplaceColour(snippets, index);
 			}
 
 			function SetPageColourRandomly() {
-				var markers = document.querySelectorAll("mark");
-				var links = document.querySelectorAll("a");
-				var snippets = document.querySelectorAll("div.script");
+				let markers = document.querySelectorAll("mark");
+				let links = document.querySelectorAll("a");
+				let snippets = document.querySelectorAll("div.script");
 				ReplaceColourRandomly(markers);
 				ReplaceColourRandomly(links);
 				ReplaceColourRandomly(snippets);
@@ -241,7 +241,7 @@
 				background-color: #ffcc68;
 				color: #2a2a3a;
 			}
-		 	.Green{
+			.Green{
 				background-color: #80ac40;
 				color: #2a2a3a;
 			}
@@ -520,25 +520,25 @@
 					<p> Variables are like containers, they can store different types of data. </p>
 					<div class="script Yellow">
 						<pre>
-              // int is a full number.
-              int playerHealth = 123;
+			  // int is a full number.
+			  int playerHealth = 123;
 
-              // float is a number with a decimal or floating point.
-              float weaponRange = 123.456f;
+			  // float is a number with a decimal or floating point.
+			  float weaponRange = 123.456f;
 
-              // double is a float with a higher level of accuracy.
-              double horizontalRotation = 123.456;
+			  // double is a float with a higher level of accuracy.
+			  double horizontalRotation = 123.456;
 
-              // string is a list of letters, numbers, and other characters.
-              string playerName = "Justin";
+			  // string is a list of letters, numbers, and other characters.
+			  string playerName = "Justin";
 
-              // char is a single character that strings are built out of.
-              char playerInitial = 'J';
+			  // char is a single character that strings are built out of.
+			  char playerInitial = 'J';
 
-              // var is a special type that will change depending on what's put on the right.
-              var aNumber = 123;
-              var aString = "Hello World!"
-            </pre>
+			  // var is a special type that will change depending on what's put on the right.
+			  var aNumber = 123;
+			  var aString = "Hello World!"
+			</pre>
 					</div>
 					<p><a class="Yellow" href="https://www.tutorialspoint.com/csharp/csharp_variables.htm" target="_blank">More about Variables.</a></p>
 				</div>
@@ -551,16 +551,16 @@
 					<p> Arrays are a type of variable that can hold a set amount of values. </p>
 					<div class="script Yellow">
 						<pre>
-              // an array is defined using type[] which means you can turn pretty much anything into an array.
-              // There are multiple ways to initialize arrays, one is to declare its size.
-              int[] Names = new int[10];
+			  // an array is defined using type[] which means you can turn pretty much anything into an array.
+			  // There are multiple ways to initialize arrays, one is to declare its size.
+			  int[] Names = new int[10];
 
-              // And then you can edit each one specifically.
-              Names[0] = "Justinas";
+			  // And then you can edit each one specifically.
+			  Names[0] = "Justinas";
 
-              // You can also initialise them using a list.
-              int[] myIntegers = new { 0, 20, 30, 123};
-            </pre>
+			  // You can also initialise them using a list.
+			  int[] myIntegers = new { 0, 20, 30, 123};
+			</pre>
 					</div>
 					<p><a class="Yellow" href="https://www.tutorialspoint.com/csharp/csharp_arrays.htm" target="_blank">More about Arrays.</a></p>
 				</div>
@@ -573,22 +573,22 @@
 					<p> Every script you make in Unity will start as a class. </p>
 					<div class="script Yellow">
 						<pre>
-              // "using" is a keyword that includes namespaces.
-              using UnityEngine;
+			  // "using" is a keyword that includes namespaces.
+			  using UnityEngine;
 
-              // This is definition for a class, it also inherits from MonoBehaviour.
-              public class TutorialClass : MonoBehaviour
-              {
-              	// Variables defined at the top are called Fields.
-              	private int _myNumber = 10;
+			  // This is definition for a class, it also inherits from MonoBehaviour.
+			  public class TutorialClass : MonoBehaviour
+			  {
+				// Variables defined at the top are called Fields.
+				private int _myNumber = 10;
 
-              	// Start is one of the functions that comes from MonoBehaviour.
-              	private void Start()
-              	{
-              		print(_myNumber);
-              	}
-              }
-            </pre>
+				// Start is one of the functions that comes from MonoBehaviour.
+				private void Start()
+				{
+					print(_myNumber);
+				}
+			  }
+			</pre>
 					</div>
 					<p><a class="Yellow" href="https://www.tutorialspoint.com/csharp/csharp_arrays.htm" target="_blank">More about Classes.</a></p>
 				</div>
@@ -601,25 +601,25 @@
 					<p> More about the variables that are defined at the start of the class. </p>
 					<div class="script Yellow">
 						<pre>
-            // First of all, fields can't be of type var, and therefore have to be set.
-            int maxHealth = 10;
-            // Keep your fields private if you can, and create getter and setter functions instead.
-            private int _currentHealth = 2;
+			// First of all, fields can't be of type var, and therefore have to be set.
+			int maxHealth = 10;
+			// Keep your fields private if you can, and create getter and setter functions instead.
+			private int _currentHealth = 2;
 
-            // Private variables won't show up in the editor, so you can use the Serialize Field attribute.
-            [SerializeField] private int _damage = 10;
+			// Private variables won't show up in the editor, so you can use the Serialize Field attribute.
+			[SerializeField] private int _damage = 10;
 
-            // Getter and Setter functions.
-            public void GetCurrentHealth()
-            {
-            	return _currentHealth;
-            }
+			// Getter and Setter functions.
+			public void GetCurrentHealth()
+			{
+				return _currentHealth;
+			}
 
-            public int SetCurrentHealth(int currentHealth)
-            {
-            	_currentHealth = currentHealth;
-            }
-            </pre>
+			public int SetCurrentHealth(int currentHealth)
+			{
+				_currentHealth = currentHealth;
+			}
+			</pre>
 					</div>
 				</div>
 			</div>
@@ -631,29 +631,29 @@
 					<p> Attributes are like the cherry on top, they modify variables in various ways. </p>
 					<div class="script Yellow">
 						<pre>
-            // Headers create a space and a bold h1 in the editor.
-            [Header("Variables!")]
+			// Headers create a space and a bold h1 in the editor.
+			[Header("Variables!")]
 
-            // SerializeField will force a field to show up in the editor, even if it's private.
-            [SerializeField] private bool _isRightHanded;
+			// SerializeField will force a field to show up in the editor, even if it's private.
+			[SerializeField] private bool _isRightHanded;
 
-            // Space will create a gap between the variables in the editor.
-            [Space]
+			// Space will create a gap between the variables in the editor.
+			[Space]
 
-            // Range will turn a numerical field into a slider.
-            [Range(-10, 10)] public float sliderField = .1f;
+			// Range will turn a numerical field into a slider.
+			[Range(-10, 10)] public float sliderField = .1f;
 
-            // Tooltip will make a description appear when you hover over a field.
-            [Tooltip("The force that is applied to the character when he jumps.")] public float JumpForce = 300;
+			// Tooltip will make a description appear when you hover over a field.
+			[Tooltip("The force that is applied to the character when he jumps.")] public float JumpForce = 300;
 
-            // Attributes can also be combined to save space.
-            [Space, SerializeField, Range(0, 200), Tooltip("The base accuracy of the weapon")]
-            private int _weaponAccuracy;
+			// Attributes can also be combined to save space.
+			[Space, SerializeField, Range(0, 200), Tooltip("The base accuracy of the weapon")]
+			private int _weaponAccuracy;
 
-            // RequireComponent will force the GameObject with this script to also have the required component.
-            [RequireComponent(typeOf("Camera"), typeOf("CameraController"))]
-            public class CameraRotation : MonoBehaviour
-            </pre>
+			// RequireComponent will force the GameObject with this script to also have the required component.
+			[RequireComponent(typeOf("Camera"), typeOf("CameraController"))]
+			public class CameraRotation : MonoBehaviour
+			</pre>
 					</div>
 				</div>
 			</div>
@@ -665,12 +665,12 @@
 					<p>Random numbers are very usefull to, well, add randomisation to your game.</p>
 					<div class="script Yellow">
 						<pre>
-              // this will generate a random integer.
-              var randomIntNumber = Random.Range(0, 100);
+			  // this will generate a random integer.
+			  var randomIntNumber = Random.Range(0, 100);
 
-              // As long as at least one parameter is a float, the result will also be a float.
-              var randomFloatNumber = Random.Range(-10f, 100);
-            </pre>
+			  // As long as at least one parameter is a float, the result will also be a float.
+			  var randomFloatNumber = Random.Range(-10f, 100);
+			</pre>
 					</div>
 				</div>
 			</div>
@@ -682,23 +682,23 @@
 					<p>Private objects can't be seen by other classes (hence the name) the way we get around this is by using getters and setters.</p>
 					<div class="script Yellow">
 						<pre>
-              // We don't want other scripts to directly change the health of the player.
-              [SerializeField] private int _health;
+			  // We don't want other scripts to directly change the health of the player.
+			  [SerializeField] private int _health;
 
-              // You instead create functions that modify the variables, which also allows you to do other things on top.
-              // This is a setter which modifies (sets) a variables.
-              public void Heal(int amount)
-              {
-              	_health += amount;
-              	// Do other stuff too.
-              }
+			  // You instead create functions that modify the variables, which also allows you to do other things on top.
+			  // This is a setter which modifies (sets) a variables.
+			  public void Heal(int amount)
+			  {
+				_health += amount;
+				// Do other stuff too.
+			  }
 
-              // Getters return a variable, so that other classes can see it.
-              public int GetHealth()
-              {
-              	return _health;
-              }
-            </pre>
+			  // Getters return a variable, so that other classes can see it.
+			  public int GetHealth()
+			  {
+				return _health;
+			  }
+			</pre>
 					</div>
 				</div>
 			</div>

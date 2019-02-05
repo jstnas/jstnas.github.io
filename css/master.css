@@ -51,11 +51,11 @@ hr {
 	width: 100%;
 	display: block;
 	border-style: solid;
-	padding: 20px;
 }
 /* Styling for the actual code. */
 pre {
 	margin: 0;
+	-moz-tab-size: 4;
 	tab-size: 4;
 	white-space: pre-wrap;
 }
