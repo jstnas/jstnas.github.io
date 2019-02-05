@@ -32,16 +32,16 @@ body {
 }
 section {
 	padding: 10px;
-	margin: 10px 0 10px 0;
+	margin: 10px 0;
 }
 h1 {
-	margin: 1rem 0 1rem 0;
+	margin: 1rem 0;
 	font-size: 48px;
 	font-weight: normal;
 }
 /* styling for both highlighted text. */
 mark, a {
-	padding: 1px 5px 1px 5px;
+	padding: 2px 20px;
 }
 /* Removes the underline for links. */
 a {
@@ -51,6 +51,7 @@ hr {
 	width: 100%;
 	display: block;
 	border-style: solid;
+	padding: 20px;
 }
 /* Styling for the actual code. */
 pre {
