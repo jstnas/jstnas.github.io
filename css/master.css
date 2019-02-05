@@ -1,10 +1,10 @@
 /* Set up the custom font.*/
 @font-face {
 	font-family: "Comicoro";
-	src: url("../fonts/Comicoro.eot");
-	src: url("../fonts/Comicoro.woff") format("woff"),
-		url("../fonts/Comicoro.woff2") format("woff2"),
-		url("../fonts/Comicoro.svg") format("svg");
+	src: url("/fonts/Comicoro.eot");
+	src: url("/fonts/Comicoro.woff") format("woff"),
+		url("/fonts/Comicoro.woff2") format("woff2"),
+		url("/fonts/Comicoro.svg") format("svg");
 }
 /* Variables */
 :root {
