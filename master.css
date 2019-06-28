@@ -24,6 +24,11 @@ hr, .script{
     border: 1px var(--dark) solid;
 }
 
+iframe {
+    border: none;
+    max-width: 100%;
+}
+
 /*.script::first-line {line-height: 0}*/
 
 a {
