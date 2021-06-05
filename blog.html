@@ -56,7 +56,41 @@ leads to create a presentation, and to rehearse it.
 <h2>Week 5</h2>
 <p>22/02 - 28/02</p>
 <p>
-TBD.
+This week I personally have been working on updating and refining the player
+movement mechanic as we recieved some feedback pointing out how it could be
+improved. One of the issues was the fact that triggers would reset your jump,
+meaning you would be able to jump without having to reach the floor. This meant
+that I had to redo how I check if the player is touching the floor, and in the
+end, I made the trigger that checks if you're on the floor ignore other
+triggers, which solved the problem.
+</p>
+<p>
+As the lead programmer for this project, I have also been responsible for
+managing the other programmers, making sure they have features to work on, and
+also acting as a point of communication between the other diciplines. The way I
+decided to distribute the work amongst the team was by organising it by
+importance, and then going over each feature and allowing the programmers to
+choose them based on their proficencies. Stefan now will be focusing on the
+enemy AI movement, while Sam is going to be implementing the camera movement.
+</p>
+<h2>Week 6</h2>
+<p>01/03 - 07/03</p>
+<p>
+One of the biggest features that we had to implement was the combat. On top of
+that we wanted to have a few different weapons at the player's disposal, both
+melee and ranged. This meant that we had to implement some sort of inventory
+system, and I decided to work on it as I had a lot of experience implementing
+inventory systems in previous projects. I decided to go with a fairly basic
+system that only kept track of whether you had picked up the weapon to keep it
+simple. One of the requirements of the inventory system was to persist between
+levels, meaning that weapons picked up in Level 1 could be used in Level 2. To
+implement this I decided to use a custom Game Instance which is a class that
+isn't destroyed between levels, so is usefull for keeping track of variables
+like health, score and in my case the weapons the player has picked up.
+</p>
+<h2>Week 7</h2>
+<p>08/03 - 14/03</p>
+<p>
 </p>
 </body>
 </html>
