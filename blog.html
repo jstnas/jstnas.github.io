@@ -58,11 +58,10 @@ leads to create a presentation, and to rehearse it.
 <p>
 This week I personally have been working on updating and refining the player
 movement mechanic as we recieved some feedback pointing out how it could be
-improved. One of the issues was the fact that triggers would reset your jump,
-meaning you would be able to jump without having to reach the floor. This meant
-that I had to redo how I check if the player is touching the floor, and in the
-end, I made the trigger that checks if you're on the floor ignore other
-triggers, which solved the problem.
+improved. The issue was that the player would keep jumping while holding the
+key, which the game designers didn't like and so we decided to remove it. This
+was done by checking if the key was pressed this frame, rather than if the key
+was held.
 </p>
 <p>
 As the lead programmer for this project, I have also been responsible for
@@ -91,6 +90,95 @@ like health, score and in my case the weapons the player has picked up.
 <h2>Week 7</h2>
 <p>08/03 - 14/03</p>
 <p>
+To supplement the inventory system that I got working last week, my task this
+week was to create a pickup system that so the player can pickup weapons. By
+using a more generalised approach, I could also create pickups for health,
+ammo, and powerups. The first part of creating a pickup was getting the player
+to interact with it. I did this by creating a sphere trigger around the pickup,
+which once entered allowed the player to press a key and interact with the
+pickup, destroying it in the process. Now that I had the basic functionality of
+the pickup working, the second part was creating different pickups. All that a
+weapon pickup would have to do is toggle a boolean that kept track of if the
+weapon had been picked up, and so it fairly simple to implement. I also ended
+up adding a health pickup.
 </p>
+<h2>Week 8</h2>
+<p>15/03 - 21/03</p>
+<p>
+This week the focus has been on getting another build out to the rest of the
+team, so they can play the updated game and see the progress we've made so far,
+and to bring up any issues with the gameplay. This means that we first have to
+merge all the different branches that we've been working into a single 'dev'
+branch. Unreal Engine makes this quite painful becaues all the files are
+binary, meaning changes between them can't be integrated meaning all the
+conflicts we have to resolve manually which takes a lot of time as we basically
+have to recreate the files that have conflicts. While this can be mitigated
+somewhat through using components, it isn't perfect but we did get everything
+merged by the end of the week. Once we had everything merged we had to create a
+playground level to showcase all the mechanics we've implemented so far. Once
+this was all done, we built the game and put it in our Discord server for
+everyone to playtest. By the end of the week, we had quite a lot of feedback to
+go through and implement.
+</p>
+<h2>Week 9</h2>
+<p>22/03 - 28/03</p>
+<p>
+This week we focused on getting the feedback implemented into the game, since I
+was responsible for the player movement, I focused for adding tweaks to it. The
+biggest was a bug that allowed triggers to reset the player's jump, meaning he
+could jump in mid air. This meant that I had to redesing the way I checked if
+the player was on the floor to ignore triggers. They way I solved the problem
+was by comparing the physics profile of the other object, and ignoring it if
+it's a trigger.
+</p>
+<h2>Week 10</h2>
+<p>29/03 - 04/04</p>
+<p>
+The focus of this week has been getting attacking to work. The first step was
+creating a trigger in front of the player that detected enemies, the size of
+the trigger also had to change depending on the range of the weapon to make the
+gameplay more interesting. Once I had the trigger moving and changing size, I
+had to make it detect enemies, and I did that by checking if the colliding
+entity had a health component. This more generalised approach allows the player
+to attack anything that has health, rather than being limited to enemies, so
+stuff like crates that drop powerups could be implemented. I kept track of all
+the entities colliding in a list, so when the player presses the attack button,
+I can iterate over the content and damage each entity, allowing the player to
+hit multiple enemies.
+</p>
+<h2>Week 11</h2>
+<p>05/04 - 11/04</p>
+<p>
+To improve on the attacking mechanic that I implemented last week, I decided to
+add an invincibility timer to all entities, this would fix one of the biggest
+issues with combat which was the ability to spam attack enemies. This had to be
+done in the health component, which would mean every entity that had health,
+would now also have an invincibility timer which could be adjusted which was a
+nice bouns. The problem was that all the health changing happened in one
+function which meant that there was no reliable way of knowing if the entity
+should be invincible. I solved this by splitting the fuction into a heal and a
+hurt function. This meant that invincibility would only be triggered after an
+entity gets hurt, and that healing could bypass invincibility. But it also
+meant I had to update all the scripts that interfaced with the health
+component, allowing them to use the new functions, and after I had done it,
+everything was working well.
+</p>
+<h2>Week 12</h2>
+<p>12/04 - 18/04</p>
+<p>
+This week I've been focusing on my other module as I've neglected it over the
+last couple weeks as I've been mainly focusing on this module, both working on
+implementing features and managing the rest of the team that I haven't had a
+proper time to work on other stuff. While I still kept the rest of the team up
+to date and created a presentation with the other leads, this week I haven't
+been working on implementing mechanics.
+</p>
+<h2>Week 13</h2>
+<p>19/04 - 25/04</p>
+This week is 
+<p>
+</p>
+<h2>Week 14</h2>
+<p>26/04 - 02/05</p>
 </body>
 </html>
